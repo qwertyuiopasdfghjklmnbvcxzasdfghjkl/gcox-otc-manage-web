@@ -21,7 +21,7 @@
         </TabPane>
         <TabPane label="买币广告" name="1">
           <Table :columns="columns1" :data="data1" @on-sort-change="setAdsBuySort"></Table>
-          <Page :current="curPage" :total="total1" @on-change="changePage1" style="text-align:center;margin-top:20px;"></Page> 
+          <Page :current="curPage" :total="total" @on-change="changePage1" style="text-align:center;margin-top:20px;"></Page> 
         </TabPane>
     </Tabs>
   </Card>
@@ -153,11 +153,15 @@ export default {
       this.getAdsList()
     },
     changeTab (name) {
+        this.curPage = 1
         this.ad_type = name
+        console.log(name)
         this.symbol = this.symbol
         this.getAdsList()
     },
     getAdsList () {
+      this.data1 = []
+      this.total = null
       let data = {
               symbol: this.symbol,
               adType: this.ad_type
@@ -182,6 +186,7 @@ export default {
     },
     changePage1 (page) {
       this.curPage = page
+      console.log(this.curPage1)
       this.getAdsList()
     }
   }
