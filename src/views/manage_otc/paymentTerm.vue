@@ -2,7 +2,7 @@
     <Card>
         <p slot="title">
             {{$t('otc.skfs')}}
-            <Button @click="outExl()">{{$t('systemlog.dc')}}</Button>
+            <!-- <Button @click="outExl()">{{$t('systemlog.dc')}}</Button> -->
         </p>
         <p class="search">
             <span>{{$t('common.yhm')}}</span>
