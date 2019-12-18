@@ -102,7 +102,7 @@ export default {
                                           this.$Message.success({content: '下架成功'})
                                           this.getAdsList()
                                       }, (msg) => {
-                                          this.$Message.error({content: msg})
+                                          this.$Message.error({content: msg||'失败'})
                                       })
                                   },
                                   onCancel: () => {

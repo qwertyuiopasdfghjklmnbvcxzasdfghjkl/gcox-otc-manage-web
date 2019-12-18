@@ -140,7 +140,7 @@ const soldOutAd = function (data, success, error) {
         if (res.rst === 1) {
             success && success(res.data);
         } else {
-            error && error(res.msg);
+            error && error(res.msg||res.error);
         }
     }, error);
 };
