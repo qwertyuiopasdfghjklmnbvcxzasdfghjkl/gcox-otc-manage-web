@@ -7,7 +7,7 @@ import store from 'vuex';
 
 let util = {};
 util.title = function (title) {
-    title = title || 'iView admin';
+    title = title || 'GCOX-OTC 后台管理系统';
     window.document.title = title;
 };
 
