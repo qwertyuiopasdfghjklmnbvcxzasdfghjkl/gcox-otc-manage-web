@@ -7,7 +7,7 @@
                     <select v-model="symbolType"
                             style="width:100px;height:30px;border: 1px solid #dddee1;border-radius: 4px;">
                         <option value="">{{$t('common.qb')}}</option>
-                        <option v-for="item in  symbolTypeList" :value="item.code">{{item.name}}</option>
+                        <option v-for="(item,i) in symbolTypeList" :value="item.code" :key="i">{{item.name}}</option>
                     </select>
                 </Col>
                 <Col span="1">{{$t('common.bz')}}：</Col>

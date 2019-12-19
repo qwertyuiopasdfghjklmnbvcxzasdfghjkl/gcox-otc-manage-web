@@ -22,8 +22,8 @@
             <span>{{$t('otc.sfsx')}}</span>
             <Select v-model="form.invalid" style="width: 200px;">
                 <Option :value="3">{{$t('common.qb')}}</Option>
-                <Option :value="1">{{$t('system.sx')}}</Option>
-                <Option :value="0">{{$t('system.bsx')}}</Option>
+                <Option :value="0">{{$t('system.sx')}}</Option>
+                <Option :value="1">{{$t('system.bsx')}}</Option>
             </Select>
             <Button type="primary" @click="page=1;getList()">{{$t('common.cx')}}</Button>
         </p>
@@ -67,8 +67,8 @@
                     {title: this.$t('common.zh'),key: 'cardNumber'},
                     {title: this.$t('otc.khh'),key: 'cardBank'},
                     {title: this.$t('otc.sfsx'),render: (h, params)=>{
-                            return h('div',params.row.invalid == 1 ? this.$t('system.sx') : this.$t('system.bsx'))
-                        }},
+                        return h('div',params.row.invalid == 1 ? this.$t('system.bsx') : this.$t('system.sx'))
+                    }},
                     {title: this.$t('common.gxsj'),key: 'updatedAt'},
                     {title: this.$t('common.cz'),render:(h, parame)=>{
                         return h('Button',{

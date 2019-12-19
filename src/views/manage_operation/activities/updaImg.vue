@@ -167,7 +167,7 @@ export default {
             formData.append('version', this.item.version)
             extendApi.updatePromotionActivity(formData, (res) => {
                 this.$Message.success({content: this.vm.$t('common.xgcg')})
-                this.$emit('removeDialog')
+                // this.$emit('removeDialog')
                 this.$emit('okCallback')
             }, (msg) => {
                 this.$Message.error({content:　msg})
@@ -184,7 +184,7 @@ export default {
             formData.append('version', this.item.version)
             extendApi.updatePromotionActivity(formData, (res) => {
                 this.$Message.success({content:　this.vm.$t('common.xgcg')})
-                this.$emit('removeDialog')
+                // this.$emit('removeDialog')
                 this.$emit('okCallback')
             }, (msg) => {
                 this.$Message.error({content:　msg})
@@ -202,7 +202,7 @@ export default {
             formData.append('version', this.item.version)
             extendApi.updatePromotionActivity(formData, (res) => {
                 this.$Message.success({content:　this.vm.$t('common.xgcg')})
-                this.$emit('removeDialog')
+                // this.$emit('removeDialog')
                 this.$emit('okCallback')
             }, (msg) => {
                 this.$Message.error({content:　msg})
