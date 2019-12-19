@@ -6,7 +6,7 @@
                 <Col span="2">
                     <select v-model="symbolType" style="width:100px;height:30px;border: 1px solid #dddee1;border-radius: 4px;">
                         <option value="">{{$t('common.qb')}}</option>
-                        <option v-for="item in  symbolTypeList" :value="item.code" >{{item.name}}</option>
+                        <option v-for="(item,i) in symbolTypeList" :value="item.code" :key="i">{{item.name}}</option>
                     </select>
                 </Col>
                 <Col span="1">{{$t('common.bz')}}：</Col>
@@ -168,6 +168,37 @@ import monitorApi from '../../api/monitoring'
                         key: 'tradeWaitingTime',
                         render: (h, params) =>{
                             return h('div', [params.row.tradeWaitingTime, 'h'])
+                        }
+                    },
+                    {
+                        title: this.$t('common.cz'),
+                        key: 'withdrawApplyId',
+                        render: (h, params) => {
+                            return h('div', [
+                                h('Button', {
+                                    props: {type: 'primary', size: 'small'},
+                                    on: {
+                                        click: () => {
+                                            this.$Modal.confirm({
+                                                title: '确认框',
+                                                content: '<h3>确认后将无法更改，是否确认交易提现失败？</h3>',
+                                                closable: true,
+                                                onOk: () => {
+                                                    monitorApi.updateWaitingWithdrawStatus({withdrawApplyId: params.row.withdrawApplyId}, res => {
+                                                        if((this.total>10)&&(this.total%10 == 1)){
+                                                            this.curPage = this.curPage-1
+                                                        }
+                                                        this.$Message.success({content: this.$t('common.xgcg')});
+                                                        this.getWithdrawApplyList();
+                                                    }, (msg) => {
+                                                        this.$Message.error({content: msg|| this.$t('ieo.sb')});
+                                                    })
+                                                }
+                                            });
+                                        }
+                                    }
+                                }, this.$t('finance.txsb'))
+                            ]);
                         }
                     }
                 ],
