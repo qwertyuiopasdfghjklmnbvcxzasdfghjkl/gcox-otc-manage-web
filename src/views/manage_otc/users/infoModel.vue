@@ -11,34 +11,23 @@
             <FormItem label="国家:">{{data.cn || '--'}}</FormItem>
             <FormItem label="证件ID:">{{data.verifyIdCard || '--'}}</FormItem>
         </Form>
-        <Form label-position="top" style="margin:0 20px;">
-            <FormItem label="1.银行卡支付">
-              <span>{{data.cardBank || '--'}}</span>
-              <span style="margin-left:20px">{{data.cardName || '--'}}</span>
-              <span style="margin-left:20px">卡号：{{data.cardNumber || '--'}}</span>
-            </FormItem>
-            <!-- <Row>
-                <Col span="8">
-                    <FormItem label="2.微信付款二维码">
-                        <div style="width:120px;height:120px;background:#ccc;">
-                            // <img :src="data1.length && data1[0].verifyBackImg" width="300px" height="300px"/>
-                            <img :src="data.weChatImagePath" width="120px" height="120px" />
-                        </div>
-                        <div>微信名：{{data.weChatName || '--'}}</div>
-                    </FormItem>
-                </Col>
-                <Col span="8">
-                    <FormItem label="3.支付宝付款二维码">
-                        <div style="width:120px;height:120px;background:#ccc;">
-                            <img :src="data.aliPayImagePath" width="120px" height="120px" />
-                        </div>
-                        <div>支付宝名：{{data.aliPayName || '--'}}</div>
-                    </FormItem>
-                </Col>
-                <Col span="8">
-                </Col>
-            </Row> -->
-        </Form>
+        <!--<Form label-position="top" style="margin:0 20px;">-->
+            <!--<FormItem label="1.">-->
+              <!--<span>{{data.cardBank || '&#45;&#45;'}}</span>-->
+              <!--<span style="margin-left:20px">{{data.cardName || '&#45;&#45;'}}</span>-->
+              <!--<span style="margin-left:20px">卡号：{{data.cardNumber || '&#45;&#45;'}}</span>-->
+            <!--</FormItem>-->
+        <!--</Form>-->
+        <div>
+            <p>银行卡支付</p>
+            <table width="100%" border="0">
+                <tr v-for="item in data.bankList">
+                    <td height="40">{{item.cardBank}}</td>
+                    <td>{{item.cardName}}</td>
+                    <td>{{item.cardNumber}}</td>
+                </tr>
+            </table>
+        </div>
     </Card>
 </template>
 
