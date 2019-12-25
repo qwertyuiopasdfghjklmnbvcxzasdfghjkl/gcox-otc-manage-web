@@ -238,7 +238,8 @@
                 };
                 data[propName] = this[propName];
                 currenyApi.updateSymbolWithdrawFees(data, (res) => {
-                    this.getchangeInfoList();
+                    // this.getchangeInfoList();
+                    this.item[propName] = this[propName]
                     this.$Message.success({content: this.vm.$t('common.xgcg')});
                 }, (msg) => {
                     this.$Message.error({content: msg});
