@@ -39,11 +39,11 @@
             </p>
             <p>
                 <span>{{vm.$t('otc.sfsx')}}</span>
-                <span>{{data.invalid == 1 ? vm.$t('system.sx') : vm.$t('system.bsx')}}</span>
+                <span>{{data.invalid == 0 ? vm.$t('system.sx') : vm.$t('system.bsx')}}</span>
                 <span>
                     <Select v-model="invalid">
-                        <Option value="1">{{vm.$t('system.sx')}}</Option>
-                        <Option value="0">{{vm.$t('system.bsx')}}</Option>
+                        <Option value="0">{{vm.$t('system.sx')}}</Option>
+                        <Option value="1">{{vm.$t('system.bsx')}}</Option>
                     </Select>
                 </span>
                 <span><Button type="primary" @click="tabs('invalid')">{{vm.$t('common.bc')}}</Button></span>
