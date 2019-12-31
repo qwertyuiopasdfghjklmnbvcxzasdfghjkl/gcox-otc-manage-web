@@ -26,6 +26,7 @@
 
 <script>
     import financeApi from '../../api/finance';
+    import currenyApi from '@/api/currency';
     import util from '../../libs/util';
     import add from './components/add';
 
@@ -75,13 +76,20 @@
                         }
                     }
                 ],
-                data1: []
+                data1: [],
+                symbolList: []
             };
         },
         created () {
             this.getList();
+            this.getdataSymbol();
         },
         methods: {
+            getdataSymbol () {
+                currenyApi.findAllValidSymbolList((res) => {
+                    this.symbolList = res;
+                });
+            },
             switchStaus (state) {
                 switch (state) {
                     case 1:
@@ -113,6 +121,7 @@
             },
             addDialog () {
                 util.setDialog(add, {
+                    symbolList: this.symbolList,
                     okCallback: () => {
                         this.getList();
                     }

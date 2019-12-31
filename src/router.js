@@ -471,48 +471,48 @@ export const exchangeRouter = [
             }
         ]
     },
-    {
-        path: '/entrust',
-        name: 'entrust',
-        title: 'nav.wtgl',
-        component: Main,
-        icon: 'briefcase',
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
-        },
-        children: [
-            { path: 'index', title: 'nav.wtgl', name: 'entrust_index',
-                component: resolve => { require(['./views/manage_exchange/entrust.vue'], resolve); } }
-        ]
-    },
-    {
-        path: '/trade',
-        name: 'trade',
-        title: 'nav.jycx',
-        component: Main,
-        icon: 'ios-infinite',
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
-        },
-        children: [
-            { path: 'index', title: 'nav.jycx', name: 'trade_index',
-                component: resolve => { require(['./views/manage_exchange/trade.vue'], resolve); } }
-        ]
-    },
-    {
-        path: '/buy-sell',
-        name: 'buy-sell',
-        title: 'nav.m1m2',
-        component: Main,
-        icon: 'ios-cart',
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
-        },
-        children: [
-            { path: 'index', title: 'nav.m1m2', name: 'buy-sell_index',
-                component: resolve => { require(['./views/manage_exchange/buy-sell.vue'], resolve); } }
-        ]
-    },
+    // {
+    //     path: '/entrust',
+    //     name: 'entrust',
+    //     title: 'nav.wtgl',
+    //     component: Main,
+    //     icon: 'briefcase',
+    //     meta: {
+    //         roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
+    //     },
+    //     children: [
+    //         { path: 'index', title: 'nav.wtgl', name: 'entrust_index',
+    //             component: resolve => { require(['./views/manage_exchange/entrust.vue'], resolve); } }
+    //     ]
+    // },
+    // {
+    //     path: '/trade',
+    //     name: 'trade',
+    //     title: 'nav.jycx',
+    //     component: Main,
+    //     icon: 'ios-infinite',
+    //     meta: {
+    //         roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
+    //     },
+    //     children: [
+    //         { path: 'index', title: 'nav.jycx', name: 'trade_index',
+    //             component: resolve => { require(['./views/manage_exchange/trade.vue'], resolve); } }
+    //     ]
+    // },
+    // {
+    //     path: '/buy-sell',
+    //     name: 'buy-sell',
+    //     title: 'nav.m1m2',
+    //     component: Main,
+    //     icon: 'ios-cart',
+    //     meta: {
+    //         roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
+    //     },
+    //     children: [
+    //         { path: 'index', title: 'nav.m1m2', name: 'buy-sell_index',
+    //             component: resolve => { require(['./views/manage_exchange/buy-sell.vue'], resolve); } }
+    //     ]
+    // },
     {
         path: '/exchange_address',
         name: 'exchange_address',
@@ -547,23 +547,23 @@ export const exchangeRouter = [
             }
         ]
     },
-    {
-        path: '/section_price',
-        name: 'section_price',
-        title: 'nav.jgfpgl',
-        component: Main,
-        icon: 'pie-graph',
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
-        },
-        children: [
-            {
-                path: 'section_price_index', title: 'nav.jgfpgl', name: 'section_price_index', component: resolve => {
-                    require(['./views/manage_exchange/section_price.vue'], resolve);
-                }
-            }
-        ]
-    }
+    // {
+    //     path: '/section_price',
+    //     name: 'section_price',
+    //     title: 'nav.jgfpgl',
+    //     component: Main,
+    //     icon: 'pie-graph',
+    //     meta: {
+    //         roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
+    //     },
+    //     children: [
+    //         {
+    //             path: 'section_price_index', title: 'nav.jgfpgl', name: 'section_price_index', component: resolve => {
+    //                 require(['./views/manage_exchange/section_price.vue'], resolve);
+    //             }
+    //         }
+    //     ]
+    // }
 ];
 export const rankRouter = [
     {
@@ -1108,23 +1108,23 @@ export const mallRouter = [
     },
 ]
 export const riskRouter = [
-    {
-        path: '/risk_exchange',
-        name: 'risk_exchange',
-        title: 'nav.bbycyj',
-        component: Main,
-        icon: 'ios-alarm',
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_OPERATION', 'ROLE_FINANCE', 'ROLE_RISK_CONTROL'],
-        },
-        children: [
-            {
-                path: 'index', title: 'nav.bbycyj', name: 'risk_exchange_index', component: resolve => {
-                    require(['./views/manage_risk/exchange.vue'], resolve);
-                }
-            }
-        ]
-    },
+    // {
+    //     path: '/risk_exchange',
+    //     name: 'risk_exchange',
+    //     title: 'nav.bbycyj',
+    //     component: Main,
+    //     icon: 'ios-alarm',
+    //     meta: {
+    //         roles: ['ROLE_ADMIN', 'ROLE_OPERATION', 'ROLE_FINANCE', 'ROLE_RISK_CONTROL'],
+    //     },
+    //     children: [
+    //         {
+    //             path: 'index', title: 'nav.bbycyj', name: 'risk_exchange_index', component: resolve => {
+    //                 require(['./views/manage_risk/exchange.vue'], resolve);
+    //             }
+    //         }
+    //     ]
+    // },
     {
         path: '/risk_otc',
         name: 'risk_otc',
@@ -1176,23 +1176,23 @@ export const riskRouter = [
             }
         ]
     },
-    {
-        path: '/risk_markt',
-        name: 'risk_markt',
-        title: 'nav.scyjgz',
-        component: Main,
-        icon: 'ios-bookmarks-outline',
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_RISK_CONTROL'],
-        },
-        children: [
-            {
-                path: 'index', title: 'nav.scyjgz', name: 'risk_markt_index', component: resolve => {
-                    require(['./views/manage_risk/markt.vue'], resolve);
-                }
-            }
-        ]
-    }
+    // {
+    //     path: '/risk_markt',
+    //     name: 'risk_markt',
+    //     title: 'nav.scyjgz',
+    //     component: Main,
+    //     icon: 'ios-bookmarks-outline',
+    //     meta: {
+    //         roles: ['ROLE_ADMIN', 'ROLE_RISK_CONTROL'],
+    //     },
+    //     children: [
+    //         {
+    //             path: 'index', title: 'nav.scyjgz', name: 'risk_markt_index', component: resolve => {
+    //                 require(['./views/manage_risk/markt.vue'], resolve);
+    //             }
+    //         }
+    //     ]
+    // }
 ];
 
 export const operationRouter = [
@@ -1264,23 +1264,23 @@ export const operationRouter = [
     //         }
     //     ]
     // },
-    {
-        path: '/operation_market',
-        name: 'operation_market',
-        title: 'nav.tjsc',
-        icon: 'social-dropbox',
-        component: Main,
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
-        },
-        children: [
-            {
-                path: 'index', title: 'nav.tjsc', name: 'operation_market_index', component: resolve => {
-                    require(['./views/manage_operation/operation_market.vue'], resolve);
-                }
-            }
-        ]
-    },
+    // {
+    //     path: '/operation_market',
+    //     name: 'operation_market',
+    //     title: 'nav.tjsc',
+    //     icon: 'social-dropbox',
+    //     component: Main,
+    //     meta: {
+    //         roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
+    //     },
+    //     children: [
+    //         {
+    //             path: 'index', title: 'nav.tjsc', name: 'operation_market_index', component: resolve => {
+    //                 require(['./views/manage_operation/operation_market.vue'], resolve);
+    //             }
+    //         }
+    //     ]
+    // },
     {
         path: '/operation_placard',
         name: 'operation_placard',

@@ -8,7 +8,7 @@
             <Row>
                 <span>{{$t('exchange.dh')}}</span>
                 <Input v-model="symbol"  style="width: 300px"></Input>
-                <Button type="primary" @click="findSymbolList()">{{$t('common.cx')}}</Button>
+                <Button type="primary" @click="curPage=1;findSymbolList()">{{$t('common.cx')}}</Button>
                 <Button type="primary" @click="add_order()" style="float:right;">{{$t('common.tj')}}</Button>
             </Row>
         </Card>
