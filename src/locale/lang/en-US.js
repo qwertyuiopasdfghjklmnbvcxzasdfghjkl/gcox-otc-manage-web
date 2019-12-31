@@ -878,18 +878,22 @@ export const fund = {
     jyyfs: 'transaction sent'
 }
 export const nav = {
+    otcgl: 'OTC Management',
+    ssgl: 'Grievance management',
+    shgl: 'Audit management',
     kycsh: 'KYC audit',
     bbgl: 'coin management',
     cwgl: 'financial management',
-    fxkzgl: 'risk control management',
-    ywtggl: 'operation and maintenance promotion management',
-    glyxtqx: 'administrator rights management',
+    fxkzgl: 'Risk Management',
+    ywtggl: 'Operation Maintenance',
+    glyxtqx: 'Admin management',
     xtcs: 'system parameters',
     xtrz: 'system log',
     jkpt: 'monitoring platform',
-    ptzjgl: 'platform fund management',
+    ptzjgl: 'Platform Fund',
     kycfh: 'KYC review',
     kycgl: 'KYC management',
+    gggl: 'Advertising management',
     sjtj: 'data statistics',
     yhgl: 'user management',
     bzgl: 'currency management',
@@ -902,6 +906,7 @@ export const nav = {
     satotxjl: 'sato cash withdrawal record',
     yhzc: 'user assets',
     pzgl: 'accounting management',
+    ddgl: 'Order management',
     ussdcz: 'ussd topup',
     nbzz: 'internal transfer',
     satoslxg: 'sato quantity modification',
@@ -914,7 +919,7 @@ export const nav = {
     tjsc: 'promote market',
     gg: 'announcement',
     appfb: 'app release',
-    glyqxgl: 'administrator rights management',
+    glyqxgl: 'Admin management',
     bbjycs: 'currency trading parameters',
     otcjysz: 'otc transaction settings',
     xtcssz: 'system parameter setting',
@@ -959,6 +964,12 @@ export const home = {
     dqzxyh: 'current online user',
     jrdlyh: 'login user today',
     kycdsh: 'KYC check pending'
+}
+export const report = {
+    tjbbgl: 'Statistical management',
+    wjm: 'file name',
+    xz: 'download',
+    mrbb: 'Daily report'
 }
 export const lock = {
     zscyh: 'Total number of locked users',

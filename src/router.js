@@ -159,7 +159,7 @@ export const otcRouter = [
     {
         path: '/otc_data_statistics',
         name: 'otc_data_statistics',
-        title: '数据统计',
+        title: 'nav.sjtj',
         component: Main,
         icon: 'arrow-graph-up-right',
         meta: {
@@ -167,7 +167,7 @@ export const otcRouter = [
         },
         children: [
             {
-                path: 'index', title: '数据统计', name: 'otc_data_statistics_index', component: resolve => {
+                path: 'index', title: 'nav.sjtj', name: 'otc_data_statistics_index', component: resolve => {
                     require(['./views/manage_otc/data_statistics.vue'], resolve);
                 }
             }
@@ -193,7 +193,7 @@ export const otcRouter = [
     {
         path: '/otc_users',
         name: 'otc_users',
-        title: '用户管理',
+        title: 'nav.yhgl',
         component: Main,
         icon: 'person-stalker',
         meta: {
@@ -201,7 +201,7 @@ export const otcRouter = [
         },
         children: [
             {
-                path: 'index', title: '用户管理', name: 'otc_users_index', component: resolve => {
+                path: 'index', title: 'nav.yhgl', name: 'otc_users_index', component: resolve => {
                     require(['./views/manage_otc/users.vue'], resolve);
                 }
             }
@@ -227,7 +227,7 @@ export const otcRouter = [
     {
         path: '/otc_ads',
         name: 'otc_ads',
-        title: '广告管理',
+        title: 'nav.gggl',
         component: Main,
         icon: 'chatbox',
         meta: {
@@ -235,7 +235,7 @@ export const otcRouter = [
         },
         children: [
             {
-                path: 'index', title: '广告管理', name: 'otc_ads_index', component: resolve => {
+                path: 'index', title: 'nav.gggl', name: 'otc_ads_index', component: resolve => {
                     require(['./views/manage_otc/ads.vue'], resolve);
                 }
             }
@@ -244,7 +244,7 @@ export const otcRouter = [
     {
         path: '/otc_orders',
         name: 'otc_orders',
-        title: '订单管理',
+        title: 'nav.ddgl',
         component: Main,
         icon: 'clipboard',
         meta: {
@@ -252,7 +252,7 @@ export const otcRouter = [
         },
         children: [
             {
-                path: 'index', title: '订单管理', name: 'otc_orders_index', component: resolve => {
+                path: 'index', title: 'nav.ddgl', name: 'otc_orders_index', component: resolve => {
                     require(['./views/manage_otc/orders.vue'], resolve);
                 }
             }
@@ -278,7 +278,7 @@ export const otcRouter = [
     {
         path: '/otc_appeals',
         name: 'otc_appeals',
-        title: '申诉管理',
+        title: 'nav.ssgl',
         component: Main,
         icon: 'mic-a',
         meta: {
@@ -286,7 +286,7 @@ export const otcRouter = [
         },
         children: [
             {
-                path: 'index', title: '申诉管理', name: 'otc_appeals_index', component: resolve => {
+                path: 'index', title: 'nav.ssgl', name: 'otc_appeals_index', component: resolve => {
                     require(['./views/manage_otc/appeals.vue'], resolve);
                 }
             }
@@ -295,7 +295,7 @@ export const otcRouter = [
     {
         path: '/otc_auditing',
         name: 'otc_auditing',
-        title: '审核管理',
+        title: 'nav.shgl',
         component: Main,
         icon: 'ios-cog',
         meta: {
@@ -303,7 +303,7 @@ export const otcRouter = [
         },
         children: [
             {
-                path: 'index', title: '审核管理', name: 'otc_auditing_index', component: resolve => {
+                path: 'index', title: 'nav.shgl', name: 'otc_auditing_index', component: resolve => {
                     require(['./views/manage_otc/auditing.vue'], resolve);
                 }
             }
@@ -335,7 +335,7 @@ export const voteRouter = [
     {
         path: '/vote_data_count',
         name: 'vote_data_count',
-        title: '数据统计',
+        title: 'nav.sjtj',
         component: Main,
         icon: 'ios-pie-outline',
         meta: {
@@ -343,7 +343,7 @@ export const voteRouter = [
         },
         children: [
             {
-                path: 'index', title: '数据统计', name: 'vote_data_count_index', component: resolve => {
+                path: 'index', title: 'nav.sjtj', name: 'vote_data_count_index', component: resolve => {
                     require(['./views/vote/index.vue'], resolve);
                 }
             }
