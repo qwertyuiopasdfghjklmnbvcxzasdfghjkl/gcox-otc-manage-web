@@ -8,11 +8,11 @@
         <Form ref="formValidate" :model="formValidate" :rules="ruleInline" :label-width="90" style="margin:0 20px;">
             <FormItem :label="vm.$t('common.bzdh')" prop="symbol">
                 <Select v-model="formValidate.symbol">
-                    <Option value="USSD">USSD</Option>
+                    <Option v-for="(item,index) in symbolList" :key="index" :value="item.symbol">{{item.symbol}}</Option>
                 </Select>
             </FormItem>
             <FormItem :label="vm.$t('common.sl')"  prop="quantity">
-                <input class="number_input" type="number" @input="oninput"/>
+                <input class="number_input" type="number" @input="oninput" style="width:100%;"/>
             </FormItem>
             <FormItem :label="vm.$t('finance.zcyhm')"  prop="fromUserName">
                 <AutoComplete
@@ -48,12 +48,13 @@
     import until from '../../../libs/util';
 
     export default {
+        props: ['symbolList'],
         data () {
             var vm = window.vm;
             return {
                 vm: vm,
                 formValidate: {
-                    symbol: 'USSD',
+                    symbol: '',
                     quantity: null,
                     fromUserName: null,
                     toUserName: null,
@@ -62,7 +63,7 @@
                 data1: [],
                 data2: [],
                 data3: [],
-                symbolList: [],
+                // symbolList: [],
                 ruleInline: {
                     symbol: [
                         {required: true, message: this.text, trigger: 'blur'}
@@ -83,17 +84,17 @@
             };
         },
         created () {
-            this.getdataSymbol();
+            // this.getdataSymbol();
         },
         methods: {
             nameSearch (value, state) {
                 this.getNameSearch(value, state);
             },
-            getdataSymbol () {
-                currenyApi.findAllValidSymbolList((res) => {
-                    this.symbolList = res;
-                });
-            },
+            // getdataSymbol () {
+            //     currenyApi.findAllValidSymbolList((res) => {
+            //         this.symbolList = res;
+            //     });
+            // },
             getNameSearch (value, state) {
                 currenyApi.getfindUserList(1, 1,
                     {
