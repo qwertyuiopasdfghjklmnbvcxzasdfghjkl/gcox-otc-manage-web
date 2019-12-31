@@ -952,6 +952,9 @@ export const fund = {
     jyyfs: '交易已发送',
 }
 export const nav = {
+    otcgl: 'OTC管理',
+    ssgl: '申诉管理',
+    shgl: '审核管理',
     kycsh: 'KYC审核',
     bbgl: '币币管理',
     cwgl: '财务管理',
@@ -966,6 +969,7 @@ export const nav = {
     kycgl: 'KYC管理',
     sjtj: '数据统计',
     yhgl: '用户管理',
+    gggl: '广告管理',
     bzgl: '币种管理',
     jyscgl: '交易市场管理',
     dzgl: '地址管理',
