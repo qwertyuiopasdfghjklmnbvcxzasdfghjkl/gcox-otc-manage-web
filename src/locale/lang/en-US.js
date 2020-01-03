@@ -879,6 +879,7 @@ export const fund = {
 }
 export const nav = {
     otcgl: 'OTC Management',
+    khhgk: 'Bank management',
     ssgl: 'Grievance management',
     shgl: 'Audit management',
     kycsh: 'KYC audit',
@@ -1013,13 +1014,18 @@ export const invite ={
 }
 export const otc = {
     skfs: 'Payment method',
+    khhxxbb: 'Bank Account Information Report',
     khh: 'Bank',
+    khhmc: 'Bank name',
     sfsx: 'Whether it takes effect',
     yhk: 'Bank card',
     wx: 'WeChat',
     zfb: 'Alipay',
     fbid: 'Fiat ID',
+    fb: 'Fiat currency',
+    xh: 'Serial number',
     fbm: 'Fiat name',
+    dyfb: 'Corresponding legal currency',
     fbdh: 'Fiat code',
     kycjb: 'KYC Level',
     mmfx: 'Buying and selling direction'
