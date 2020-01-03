@@ -422,4 +422,28 @@ const insertOtcTradePermission = function (data, success, error) {
 };
 otc.insertOtcTradePermission = insertOtcTradePermission;
 
+// OTC管理-开户行管理 api/bm/otcBank/findBankList/10/1
+const findBankList = function (size,page,data, success, error) {
+    api.post(`api/bm/otcBank/findBankList/${size}/${page}`, data, (res) => {
+        if (res.rst === 1) {
+            success && success(res.data,res.total);
+        } else {
+            error && error(res.msg);
+        }
+    }, error);
+};
+otc.findBankList = findBankList;
+
+// 新增/修改开户行管理 api/bm/otcBank/addOrUpdate
+const addOrUpdate = function (data, success, error) {
+    api.post(`api/bm/otcBank/addOrUpdate`, data, (res) => {
+        if (res.rst === 1) {
+            success && success(res.msg);
+        } else {
+            error && error(res.msg);
+        }
+    }, error);
+};
+otc.addOrUpdate = addOrUpdate;
+
 export default otc;

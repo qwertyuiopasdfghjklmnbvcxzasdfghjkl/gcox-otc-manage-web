@@ -308,6 +308,23 @@ export const otcRouter = [
                 }
             }
         ]
+    },
+    {
+        path: '/otc_bank',
+        name: 'otc_bank',
+        title: 'nav.khhgk',
+        component: Main,
+        icon: 'cash',
+        meta: {
+            roles: ['ROLE_ADMIN', 'ROLE_OTC_AUDIT'],
+        },
+        children: [
+            {
+                path: 'index', title: 'nav.khhgk', name: 'otc_bank_index', component: resolve => {
+                    require(['./views/manage_otc/otc_bank.vue'], resolve);
+                }
+            }
+        ]
     }
 ];
 
