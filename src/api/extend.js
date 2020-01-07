@@ -502,4 +502,16 @@ const updataCms = function (data, success, error) {
 };
 extend.updataCms = updataCms;
 
+// 批量导入分发
+const batchDistribute = function (data, success, error) {
+    api.post(`api/bm/promotionManage/distribute/import/batchDistribute`, data,(res) => {
+        if (res.rst === 1) {
+            success && success(res.data);
+        } else {
+            error && error(res.msg);
+        }
+    }, error);
+};
+extend.batchDistribute = batchDistribute;
+
 export default extend;

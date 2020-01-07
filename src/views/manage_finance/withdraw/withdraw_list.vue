@@ -61,9 +61,9 @@
     </div>
 </template>
 <script>
-    import expandRow from './table-expand.vue';
-    import monitorApi from '../../api/monitoring';
-    import util from '../../libs/util';
+    import expandRow from '../table-expand.vue';
+    import monitorApi from '../../../api/monitoring';
+    import util from '../../../libs/util';
 
     export default {
         components: {expandRow},

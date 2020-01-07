@@ -19,14 +19,14 @@
             <FormItem :label="vm.$t('common.sl')" prop="quantity">
                 <Input v-model="formValidate.quantity" name="quantity" :maxlength="255"></Input>
             </FormItem>
-            <FormItem :label="vm.$t('operation.mbyhid')" prop="userId">
-                <Input v-model="formValidate.userId" name="userId"></Input>
+            <FormItem :label="vm.$t('operation.mbyhid')" prop="username">
+                <Input v-model="formValidate.username" name="username"></Input>
             </FormItem>
-            <FormItem :label="vm.$t('operation.mbzhid')" prop="accountId">
-                <Input v-model="formValidate.accountId" name="accountId"></Input>
-            </FormItem>
-             <FormItem :label="vm.$t('operation.lyzhid')" prop="sourceAccountId">
-                <Input v-model="formValidate.sourceAccountId" name="sourceAccountId"></Input>
+            <!--<FormItem :label="vm.$t('operation.mbzhid')" prop="accountId">-->
+                <!--<Input v-model="formValidate.accountId" name="accountId"></Input>-->
+            <!--</FormItem>-->
+             <FormItem :label="vm.$t('operation.lyzhid')" prop="sourceUsername">
+                <Input v-model="formValidate.sourceUsername" name="sourceUsername"></Input>
             </FormItem>
              <FormItem :label="vm.$t('common.beiz')" prop="remarks">
                 <Input v-model="formValidate.remarks" name="remarks" :maxlength="255"></Input>
@@ -51,9 +51,9 @@ export default {
                 symbol: '',
                 symbolType: '',
                 quantity: null,
-                userId: null,
-                accountId: null,
-                sourceAccountId: null,
+                username: null,
+                // accountId: null,
+                sourceUsername: null,
                 remarks: null
             },
             ruleValidate: {
@@ -69,14 +69,14 @@ export default {
                 quantity: [
                     { required: true, message: '请输入数量', trigger: 'blur' }
                 ],
-                userId: [
-                    { required: true, message: '请输入目标用户ID', trigger: 'blur' }
+                username: [
+                    { required: true, message: '请输入目标用户名', trigger: 'blur' }
                 ],
-                accountId: [
-                    { required: true, message: '请输入目标账户ID', trigger: 'blur' }
-                ],
-                sourceAccountId: [
-                    { required: true, message: '请输入来源账户ID', trigger: 'blur' }
+                // accountId: [
+                //     { required: true, message: '请输入目标账户ID', trigger: 'blur' }
+                // ],
+                sourceUsername: [
+                    { required: true, message: '请输入来源账户名', trigger: 'blur' }
                 ],
                 remarks: [
                     { required: true, message: '请输入备注', trigger: 'blur' }

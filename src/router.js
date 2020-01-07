@@ -308,6 +308,23 @@ export const otcRouter = [
                 }
             }
         ]
+    },
+    {
+        path: '/otc_bank',
+        name: 'otc_bank',
+        title: 'nav.khhgl',
+        component: Main,
+        icon: 'ios-cog',
+        meta: {
+            roles: ['ROLE_ADMIN', 'ROLE_OTC_AUDIT'],
+        },
+        children: [
+            {
+                path: 'index', title: 'nav.khhgl', name: 'otc_bank_index', component: resolve => {
+                    require(['./views/manage_otc/bank.vue'], resolve);
+                }
+            }
+        ]
     }
 ];
 
@@ -850,7 +867,7 @@ export const financeRouter = [
     // {
     //     path: '/thirdparty',
     //     name: 'thirdparty',
-    //     title: 'nav.dsfczlb',
+    //     title: 'nav.usdtcz',
     //     component: Main,
     //     icon: 'android-exit',
     //     meta: {
@@ -858,7 +875,7 @@ export const financeRouter = [
     //     },
     //     children: [
     //         {
-    //             path: 'thirdparty_index', title: 'nav.dsfczlb', name: 'thirdparty_index', component: resolve => {
+    //             path: 'thirdparty_index', title: 'nav.usdtcz', name: 'thirdparty_index', component: resolve => {
     //                 require(['./views/manage_finance/thirdparty.vue'], resolve);
     //             }
     //         }
@@ -893,7 +910,7 @@ export const financeRouter = [
         children: [
             {
                 path: 'index', title: 'exchange.tbjl', name: 'finance_withdraw_list_index', component: resolve => {
-                    require(['./views/manage_finance/withdraw_list.vue'], resolve);
+                    require(['./views/manage_finance/withdraw/withdraw_list.vue'], resolve);
                 }
             }
         ]
@@ -1065,6 +1082,23 @@ export const financeRouter = [
             {
                 path: 'index', title: 'nav.xnct', name: 'virtual_index', component: resolve => {
                     require(['./views/manage_finance/virtual.vue'], resolve);
+                }
+            }
+        ]
+    },
+    {
+        path: '/minersFee',
+        name: 'minersFee',
+        title: 'nav.kgfff',
+        component: Main,
+        icon: 'arrow-swap',
+        meta: {
+            roles: ['ROLE_ADMIN', 'ROLE_FINANCE'],
+        },
+        children: [
+            {
+                path: 'index', title: 'nav.kgfff', name: 'minersFee_index', component: resolve => {
+                    require(['./views/manage_finance/minersFee.vue'], resolve);
                 }
             }
         ]

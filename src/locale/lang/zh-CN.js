@@ -259,6 +259,11 @@ export const finance = {
     dylxys: '大于0小于10',
     dydysxyyb: '大于等于10小于100',
     dydyyb: '大于等于100',
+    cbdz: '充值地址',
+    dzsl: '地址数量',
+    ffkgf: '分发矿工费',
+    mbdz: '目标地址',
+    ffsl: '分发数量'
 };
 export const kyc = {
     dshyhsl: '待审核用户数量',
@@ -290,7 +295,7 @@ export const kyc = {
     sfjnbzj: '是否缴纳保证金',
     wjbzj: '未交保证金',
     yjbzj: '已交保证金'
-}
+};
 export const exchange = {
     sjtj: '数据统计',
     rqzjyl: '日全站交易量',
@@ -568,8 +573,9 @@ export const exchange = {
     scffjl: '锁仓发放记录',
     dczdtbsl: '单次最大提币数量',
     drzdtbsl: '单日最大提币数量',
-    zdshje: '自动审核金额'
-}
+    zdshje: '自动审核金额',
+    usdtczlb: 'USDT充值列表'
+};
 export const risk = {
     bbycyj: '币币异常预警',
     dclycyjs: '待处理异常预警数',
@@ -630,7 +636,7 @@ export const risk = {
     xzgz: '新增规则',
     xggz: '修改规则',
     wjyjgfz: '未交易间隔时间阈值（h）',
-}
+};
 export const operation = {
     ff: '分发',
     yff: '已分发',
@@ -642,9 +648,9 @@ export const operation = {
     ffcg: '分发成功',
     qxcg: '取消成功',
     bh: '编号',
-    mbyhid: '目标用户ID',
+    mbyhid: '目标用户名',
     mbzhid: '目标账户ID',
-    lyzhid: '来源账户ID',
+    lyzhid: '来源账户名',
     hdtg: '推广活动',
     tjbny: '添加BANNER页',
     ggw: '广告位',
@@ -752,8 +758,13 @@ export const operation = {
     ywyl: '英文预览',
     zwzw: '中文正文',
     ywzw: '英文正文',
-    fbcg: '发布成功'
-}
+    fbcg: '发布成功',
+    plff: '批量分发',
+    scwj: '上传文件',
+    scbff: '上传并分发',
+    ffz: '分发中，请稍后',
+    qxzwj: '请选择文件'
+};
 export const admin = {
     glyqx: '管理员权限管理',
     xzgly: '新增管理员',
@@ -765,7 +776,7 @@ export const admin = {
     qxlx: '权限类型',
     qzcsrmm: '请再次输入密码',
     mmbyz: '密码不一致'
-}
+};
 export const system = {
     bbjycs: '币币交易参数',
     xm: '项目',
@@ -808,7 +819,7 @@ export const system = {
     fl: '费率',
     sx: '生效',
     bsx: '不生效',
-}
+};
 export const systemlog = {
     xtrz: '系统日志',
     dc: '导出',
@@ -829,7 +840,7 @@ export const systemlog = {
     dywqxyyw: '大于等于5000小于10000',
     dyywxylw: '大于等于10000小于20000',
     dylw: '大于等于20000',
-}
+};
 export const monitoring = {
     gllx: '公链类型',
     tbzt: '提币状态',
@@ -928,7 +939,7 @@ export const monitoring = {
     ywb: '业务表',
     wbfwdz: '外部服务地址',
     tbqks: '同步区块数'
-}
+};
 export const fund = {
     lqbsz: '冷钱包设置',
     qycg: '启用成功',
@@ -950,7 +961,7 @@ export const fund = {
     zzlx: '转账类型',
     zzzt: '转账状态',
     jyyfs: '交易已发送',
-}
+};
 export const nav = {
     kycsh: 'KYC审核',
     bbgl: '币币管理',
@@ -1045,21 +1056,24 @@ export const nav = {
     tbxe: '提币限额',
     yhjbgl: '用户级别管理',
     jylcx: '交易量查询',
-    fjgz: '分级规则'
-}
+    fjgz: '分级规则',
+    usdtcz: 'USDT充值',
+    kgfff: '矿工费分发',
+    khhgl: '开户行管理'
+};
 export const home = {
     zyh: '总用户',
     jrxzyh: '今日新增用户',
     dqzxyh: '当前在线用户',
     jrdlyh: '今日登陆用户',
     kycdsh: 'KYC待审核'
-}
+};
 export const report = {
     tjbbgl: '统计报表管理',
     wjm: '文件名',
     xz: '下载',
     mrbb: '每日报表'
-}
+};
 export const mall = {
     ddid: '订单ID',
     spmc: '商品名称',
@@ -1093,7 +1107,7 @@ export const mall = {
     spxg: '商品修改',
     tjsp: '添加商品',
     ywjj: '英文简介'
-}
+};
 export const ieo = {
     xmmc: '项目名称',
     mfsl: '每份数量',
@@ -1158,7 +1172,7 @@ export const ieo = {
     tjdfbz: '添加付款币种',
     kkfbcg: '扣款发币成功',
     xmtp: '项目图片'
-}
+};
 export const lock = {
     zscyh: '总锁仓用户数',
     zscbs: '总锁仓笔数',
@@ -1182,8 +1196,8 @@ export const lock = {
     ffsl: '发放数量',
     wwc: '未完成',
     ywc: '已完成',
-}
-export const invite ={
+};
+export const invite = {
     yqxxcx: '邀请信息查询',
     yqgxcx: '邀请关系查询',
     yqgxxg: '邀请关系修改',
@@ -1198,7 +1212,7 @@ export const invite ={
     xgtjr: '修改推荐人',
     xgq: '修改前',
     xgh: '修改后',
-}
+};
 export const otc = {
     skfs: '收款方式',
     khh: '开户行',
@@ -1210,9 +1224,14 @@ export const otc = {
     fbm: '法币名',
     fbdh: '法币代号',
     kycjb: 'KYC级别',
-    mmfx: '买卖方向'
-}
-export const rank ={
+    mmfx: '买卖方向',
+    khhmc: '开户行名称',
+    fb: '法币',
+    dyfb: '对应法币',
+    xh: '序号',
+    xzkhh: '新增开户行'
+};
+export const rank = {
     jb: '级别',
     jbsfgx: '级别是否更新',
     yf: '月份',
@@ -1222,4 +1241,4 @@ export const rank ={
     jbmc: '级别名称',
     zxjyl: '最小交易量',
     zk: '折扣'
-}
+};

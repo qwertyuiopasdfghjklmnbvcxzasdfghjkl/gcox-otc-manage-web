@@ -48,7 +48,7 @@
 </template>
 
 <script>
-    import financeApi from '../../api/finance';
+    import financeApi from '../../../api/finance';
 
     export default {
         props: ['item', 'type'],
