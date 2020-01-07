@@ -431,7 +431,7 @@ export const exchangeRouter = [
         },
         children: [
             {
-                path: 'index',  title: 'nav.sjtj', name: 'exchange_data_statistics_index', component: resolve => {
+                path: 'index', title: 'nav.sjtj', name: 'exchange_data_statistics_index', component: resolve => {
                     require(['./views/manage_exchange/data_statistics.vue'], resolve);
                 }
             }
@@ -482,7 +482,7 @@ export const exchangeRouter = [
         },
         children: [
             {
-                path: 'index',title: 'nav.jyscgl', name: 'exchange_markets_index', component: resolve => {
+                path: 'index', title: 'nav.jyscgl', name: 'exchange_markets_index', component: resolve => {
                     require(['./views/manage_exchange/markets.vue'], resolve);
                 }
             }
@@ -590,7 +590,7 @@ export const rankRouter = [
         component: Main,
         icon: 'pie-graph',
         meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_CUSTOMER','ROLE_USER_LEVEL_MANAGER'],
+            roles: ['ROLE_ADMIN', 'ROLE_CUSTOMER', 'ROLE_USER_LEVEL_MANAGER'],
         },
         children: [
             {
@@ -607,7 +607,7 @@ export const rankRouter = [
         component: Main,
         icon: 'stats-bars',
         meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_CUSTOMER','ROLE_USER_LEVEL_MANAGER'],
+            roles: ['ROLE_ADMIN', 'ROLE_CUSTOMER', 'ROLE_USER_LEVEL_MANAGER'],
         },
         children: [
             {
@@ -624,7 +624,7 @@ export const rankRouter = [
         component: Main,
         icon: 'network',
         meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_CUSTOMER','ROLE_USER_LEVEL_MANAGER'],
+            roles: ['ROLE_ADMIN', 'ROLE_CUSTOMER', 'ROLE_USER_LEVEL_MANAGER'],
         },
         children: [
             {
@@ -634,7 +634,7 @@ export const rankRouter = [
             }
         ]
     }
-]
+];
 export const inviteRouter = [
     {
         path: '/info',
@@ -643,7 +643,7 @@ export const inviteRouter = [
         component: Main,
         icon: 'stats-bars',
         meta: {
-            roles: ['ROLE_ADMIN','ROLE_OPERATION','ROLE_CUSTOMER'],
+            roles: ['ROLE_ADMIN', 'ROLE_OPERATION', 'ROLE_CUSTOMER'],
         },
         children: [
             {
@@ -660,7 +660,7 @@ export const inviteRouter = [
         component: Main,
         icon: 'network',
         meta: {
-            roles: ['ROLE_ADMIN','ROLE_OPERATION','ROLE_CUSTOMER'],
+            roles: ['ROLE_ADMIN', 'ROLE_OPERATION', 'ROLE_CUSTOMER'],
         },
         children: [
             {
@@ -677,11 +677,14 @@ export const inviteRouter = [
         component: Main,
         icon: 'ios-paper-outline',
         meta: {
-            roles: ['ROLE_ADMIN','ROLE_OPERATION'],
+            roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
         },
         children: [
             {
-                path: 'relation-update-list', title: 'invite.yqgxxg', name: 'relation-update_index', component: resolve => {
+                path: 'relation-update-list',
+                title: 'invite.yqgxxg',
+                name: 'relation-update_index',
+                component: resolve => {
                     require(['./views/manage_invite/relation-update.vue'], resolve);
                 }
             },
@@ -696,7 +699,7 @@ export const lockRouter = [
         component: Main,
         icon: 'stats-bars',
         meta: {
-            roles: ['ROLE_ADMIN','ROLE_OPERATION','ROLE_CUSTOMER'],
+            roles: ['ROLE_ADMIN', 'ROLE_OPERATION', 'ROLE_CUSTOMER'],
         },
         children: [
             {
@@ -713,7 +716,7 @@ export const lockRouter = [
         component: Main,
         icon: 'eye',
         meta: {
-            roles: ['ROLE_ADMIN','ROLE_OPERATION','ROLE_CUSTOMER'],
+            roles: ['ROLE_ADMIN', 'ROLE_OPERATION', 'ROLE_CUSTOMER'],
         },
         children: [
             {
@@ -730,7 +733,7 @@ export const lockRouter = [
         component: Main,
         icon: 'ios-list',
         meta: {
-            roles: ['ROLE_ADMIN','ROLE_OPERATION','ROLE_CUSTOMER'],
+            roles: ['ROLE_ADMIN', 'ROLE_OPERATION', 'ROLE_CUSTOMER'],
         },
         children: [
             {
@@ -747,7 +750,7 @@ export const lockRouter = [
         component: Main,
         icon: 'ios-barcode',
         meta: {
-            roles: ['ROLE_ADMIN','ROLE_OPERATION','ROLE_CUSTOMER'],
+            roles: ['ROLE_ADMIN', 'ROLE_OPERATION', 'ROLE_CUSTOMER'],
         },
         children: [
             {
@@ -827,7 +830,7 @@ export const ieoRouter = [
             }
         ]
     }
-]
+];
 
 export const financeRouter = [
     {
@@ -910,7 +913,7 @@ export const financeRouter = [
         children: [
             {
                 path: 'index', title: 'exchange.tbjl', name: 'finance_withdraw_list_index', component: resolve => {
-                    require(['./views/manage_finance/withdraw_list.vue'], resolve);
+                    require(['./views/manage_finance/withdraw/withdraw_list.vue'], resolve);
                 }
             }
         ]
@@ -1123,7 +1126,7 @@ export const mallRouter = [
             }
         ]
     },
-]
+];
 export const riskRouter = [
     // {
     //     path: '/risk_exchange',
@@ -1742,7 +1745,7 @@ export const monitoringRouter = [
         },
         children: [
             {
-                path: 'account_msg_index',  title: 'nav.zzhxx', name: 'account_msg_index', component: resolve => {
+                path: 'account_msg_index', title: 'nav.zzhxx', name: 'account_msg_index', component: resolve => {
                     require(['./views/manage_monitoring/account_msg_index.vue'], resolve);
                 }
             }

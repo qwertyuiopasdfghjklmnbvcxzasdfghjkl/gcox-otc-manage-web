@@ -1235,10 +1235,6 @@ export const otc = {
     fbdh: '法币代号',
     kycjb: 'KYC级别',
     mmfx: '买卖方向',
-    khhmc: '开户行名称',
-    fb: '法币',
-    dyfb: '对应法币',
-    xh: '序号',
     xzkhh: '新增开户行'
 };
 export const rank = {

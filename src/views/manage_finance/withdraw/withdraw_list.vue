@@ -66,7 +66,7 @@
     import util from '../../../libs/util';
 
     export default {
-        components: {expandRow},
+        // components: {expandRow},
         data () {
             return {
                 curPage: 1,
@@ -138,7 +138,7 @@
                         key: 'minerFee'
                     },
                     {
-                        title: this.$t('monitoring.tbzt'), //1 未处理 2 等待交易发起 3 交易已发送(等待对账) 4 撤销 5 提现失败 6对账完成 7提现失败资金返还
+                        title: this.$t('monitoring.tbzt'), // 1 未处理 2 等待交易发起 3 交易已发送(等待对账) 4 撤销 5 提现失败 6对账完成 7提现失败资金返还
                         key: 'status',
                         render: (h, params) => {
                             return h('div', this.statusSwicth(params.row.status));
@@ -169,10 +169,10 @@
                         title: this.$t('monitoring.jejdthid'),
                         key: 'unfrozenLedgerId',
                         width: 150
-                    },
+                    }
                 ],
                 data9: [],
-                symbolTypeList: [],
+                symbolTypeList: []
             };
         },
         created () {
@@ -210,25 +210,18 @@
                 switch (state) {
                     case 1:
                         return this.$t('risk.wcl');
-                        break;
                     case 2:
                         return this.$t('finance.ddjyfq');
-                        break;
                     case 3:
                         return this.$t('finance.jyyfs');
-                        break;
                     case 4:
                         return this.$t('finance.cx');
-                        break;
                     case 5:
                         return this.$t('finance.txsb');
-                        break;
                     case 6:
                         return this.$t('finance.txwc');
-                        break;
                     case 7:
                         return this.$t('finance.txsbzjfh');
-                        break;
                 }
             },
             select () {
