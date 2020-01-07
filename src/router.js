@@ -159,7 +159,7 @@ export const otcRouter = [
     {
         path: '/otc_data_statistics',
         name: 'otc_data_statistics',
-        title: '数据统计',
+        title: 'nav.sjtj',
         component: Main,
         icon: 'arrow-graph-up-right',
         meta: {
@@ -167,7 +167,7 @@ export const otcRouter = [
         },
         children: [
             {
-                path: 'index', title: '数据统计', name: 'otc_data_statistics_index', component: resolve => {
+                path: 'index', title: 'nav.sjtj', name: 'otc_data_statistics_index', component: resolve => {
                     require(['./views/manage_otc/data_statistics.vue'], resolve);
                 }
             }
@@ -193,7 +193,7 @@ export const otcRouter = [
     {
         path: '/otc_users',
         name: 'otc_users',
-        title: '用户管理',
+        title: 'nav.yhgl',
         component: Main,
         icon: 'person-stalker',
         meta: {
@@ -201,7 +201,7 @@ export const otcRouter = [
         },
         children: [
             {
-                path: 'index', title: '用户管理', name: 'otc_users_index', component: resolve => {
+                path: 'index', title: 'nav.yhgl', name: 'otc_users_index', component: resolve => {
                     require(['./views/manage_otc/users.vue'], resolve);
                 }
             }
@@ -227,7 +227,7 @@ export const otcRouter = [
     {
         path: '/otc_ads',
         name: 'otc_ads',
-        title: '广告管理',
+        title: 'nav.gggl',
         component: Main,
         icon: 'chatbox',
         meta: {
@@ -235,7 +235,7 @@ export const otcRouter = [
         },
         children: [
             {
-                path: 'index', title: '广告管理', name: 'otc_ads_index', component: resolve => {
+                path: 'index', title: 'nav.gggl', name: 'otc_ads_index', component: resolve => {
                     require(['./views/manage_otc/ads.vue'], resolve);
                 }
             }
@@ -244,7 +244,7 @@ export const otcRouter = [
     {
         path: '/otc_orders',
         name: 'otc_orders',
-        title: '订单管理',
+        title: 'nav.ddgl',
         component: Main,
         icon: 'clipboard',
         meta: {
@@ -252,7 +252,7 @@ export const otcRouter = [
         },
         children: [
             {
-                path: 'index', title: '订单管理', name: 'otc_orders_index', component: resolve => {
+                path: 'index', title: 'nav.ddgl', name: 'otc_orders_index', component: resolve => {
                     require(['./views/manage_otc/orders.vue'], resolve);
                 }
             }
@@ -278,7 +278,7 @@ export const otcRouter = [
     {
         path: '/otc_appeals',
         name: 'otc_appeals',
-        title: '申诉管理',
+        title: 'nav.ssgl',
         component: Main,
         icon: 'mic-a',
         meta: {
@@ -286,7 +286,7 @@ export const otcRouter = [
         },
         children: [
             {
-                path: 'index', title: '申诉管理', name: 'otc_appeals_index', component: resolve => {
+                path: 'index', title: 'nav.ssgl', name: 'otc_appeals_index', component: resolve => {
                     require(['./views/manage_otc/appeals.vue'], resolve);
                 }
             }
@@ -295,7 +295,7 @@ export const otcRouter = [
     {
         path: '/otc_auditing',
         name: 'otc_auditing',
-        title: '审核管理',
+        title: 'nav.shgl',
         component: Main,
         icon: 'ios-cog',
         meta: {
@@ -303,7 +303,7 @@ export const otcRouter = [
         },
         children: [
             {
-                path: 'index', title: '审核管理', name: 'otc_auditing_index', component: resolve => {
+                path: 'index', title: 'nav.shgl', name: 'otc_auditing_index', component: resolve => {
                     require(['./views/manage_otc/auditing.vue'], resolve);
                 }
             }
@@ -312,16 +312,16 @@ export const otcRouter = [
     {
         path: '/otc_bank',
         name: 'otc_bank',
-        title: 'nav.khhgl',
+        title: 'nav.khhgk',
         component: Main,
-        icon: 'ios-cog',
+        icon: 'cash',
         meta: {
             roles: ['ROLE_ADMIN', 'ROLE_OTC_AUDIT'],
         },
         children: [
             {
-                path: 'index', title: 'nav.khhgl', name: 'otc_bank_index', component: resolve => {
-                    require(['./views/manage_otc/bank.vue'], resolve);
+                path: 'index', title: 'nav.khhgk', name: 'otc_bank_index', component: resolve => {
+                    require(['./views/manage_otc/otc_bank.vue'], resolve);
                 }
             }
         ]
@@ -352,7 +352,7 @@ export const voteRouter = [
     {
         path: '/vote_data_count',
         name: 'vote_data_count',
-        title: '数据统计',
+        title: 'nav.sjtj',
         component: Main,
         icon: 'ios-pie-outline',
         meta: {
@@ -360,7 +360,7 @@ export const voteRouter = [
         },
         children: [
             {
-                path: 'index', title: '数据统计', name: 'vote_data_count_index', component: resolve => {
+                path: 'index', title: 'nav.sjtj', name: 'vote_data_count_index', component: resolve => {
                     require(['./views/vote/index.vue'], resolve);
                 }
             }
@@ -488,48 +488,48 @@ export const exchangeRouter = [
             }
         ]
     },
-    {
-        path: '/entrust',
-        name: 'entrust',
-        title: 'nav.wtgl',
-        component: Main,
-        icon: 'briefcase',
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
-        },
-        children: [
-            { path: 'index', title: 'nav.wtgl', name: 'entrust_index',
-                component: resolve => { require(['./views/manage_exchange/entrust.vue'], resolve); } }
-        ]
-    },
-    {
-        path: '/trade',
-        name: 'trade',
-        title: 'nav.jycx',
-        component: Main,
-        icon: 'ios-infinite',
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
-        },
-        children: [
-            { path: 'index', title: 'nav.jycx', name: 'trade_index',
-                component: resolve => { require(['./views/manage_exchange/trade.vue'], resolve); } }
-        ]
-    },
-    {
-        path: '/buy-sell',
-        name: 'buy-sell',
-        title: 'nav.m1m2',
-        component: Main,
-        icon: 'ios-cart',
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
-        },
-        children: [
-            { path: 'index', title: 'nav.m1m2', name: 'buy-sell_index',
-                component: resolve => { require(['./views/manage_exchange/buy-sell.vue'], resolve); } }
-        ]
-    },
+    // {
+    //     path: '/entrust',
+    //     name: 'entrust',
+    //     title: 'nav.wtgl',
+    //     component: Main,
+    //     icon: 'briefcase',
+    //     meta: {
+    //         roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
+    //     },
+    //     children: [
+    //         { path: 'index', title: 'nav.wtgl', name: 'entrust_index',
+    //             component: resolve => { require(['./views/manage_exchange/entrust.vue'], resolve); } }
+    //     ]
+    // },
+    // {
+    //     path: '/trade',
+    //     name: 'trade',
+    //     title: 'nav.jycx',
+    //     component: Main,
+    //     icon: 'ios-infinite',
+    //     meta: {
+    //         roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
+    //     },
+    //     children: [
+    //         { path: 'index', title: 'nav.jycx', name: 'trade_index',
+    //             component: resolve => { require(['./views/manage_exchange/trade.vue'], resolve); } }
+    //     ]
+    // },
+    // {
+    //     path: '/buy-sell',
+    //     name: 'buy-sell',
+    //     title: 'nav.m1m2',
+    //     component: Main,
+    //     icon: 'ios-cart',
+    //     meta: {
+    //         roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
+    //     },
+    //     children: [
+    //         { path: 'index', title: 'nav.m1m2', name: 'buy-sell_index',
+    //             component: resolve => { require(['./views/manage_exchange/buy-sell.vue'], resolve); } }
+    //     ]
+    // },
     {
         path: '/exchange_address',
         name: 'exchange_address',
@@ -564,23 +564,23 @@ export const exchangeRouter = [
             }
         ]
     },
-    {
-        path: '/section_price',
-        name: 'section_price',
-        title: 'nav.jgfpgl',
-        component: Main,
-        icon: 'pie-graph',
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
-        },
-        children: [
-            {
-                path: 'section_price_index', title: 'nav.jgfpgl', name: 'section_price_index', component: resolve => {
-                    require(['./views/manage_exchange/section_price.vue'], resolve);
-                }
-            }
-        ]
-    }
+    // {
+    //     path: '/section_price',
+    //     name: 'section_price',
+    //     title: 'nav.jgfpgl',
+    //     component: Main,
+    //     icon: 'pie-graph',
+    //     meta: {
+    //         roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
+    //     },
+    //     children: [
+    //         {
+    //             path: 'section_price_index', title: 'nav.jgfpgl', name: 'section_price_index', component: resolve => {
+    //                 require(['./views/manage_exchange/section_price.vue'], resolve);
+    //             }
+    //         }
+    //     ]
+    // }
 ];
 export const rankRouter = [
     {
@@ -867,7 +867,7 @@ export const financeRouter = [
     // {
     //     path: '/thirdparty',
     //     name: 'thirdparty',
-    //     title: 'nav.usdtcz',
+    //     title: 'nav.dsfczlb',
     //     component: Main,
     //     icon: 'android-exit',
     //     meta: {
@@ -875,7 +875,7 @@ export const financeRouter = [
     //     },
     //     children: [
     //         {
-    //             path: 'thirdparty_index', title: 'nav.usdtcz', name: 'thirdparty_index', component: resolve => {
+    //             path: 'thirdparty_index', title: 'nav.dsfczlb', name: 'thirdparty_index', component: resolve => {
     //                 require(['./views/manage_finance/thirdparty.vue'], resolve);
     //             }
     //         }
@@ -910,7 +910,7 @@ export const financeRouter = [
         children: [
             {
                 path: 'index', title: 'exchange.tbjl', name: 'finance_withdraw_list_index', component: resolve => {
-                    require(['./views/manage_finance/withdraw/withdraw_list.vue'], resolve);
+                    require(['./views/manage_finance/withdraw_list.vue'], resolve);
                 }
             }
         ]
@@ -1085,23 +1085,6 @@ export const financeRouter = [
                 }
             }
         ]
-    },
-    {
-        path: '/minersFee',
-        name: 'minersFee',
-        title: 'nav.kgfff',
-        component: Main,
-        icon: 'arrow-swap',
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_FINANCE'],
-        },
-        children: [
-            {
-                path: 'index', title: 'nav.kgfff', name: 'minersFee_index', component: resolve => {
-                    require(['./views/manage_finance/minersFee.vue'], resolve);
-                }
-            }
-        ]
     }
 ];
 
@@ -1142,23 +1125,23 @@ export const mallRouter = [
     },
 ]
 export const riskRouter = [
-    {
-        path: '/risk_exchange',
-        name: 'risk_exchange',
-        title: 'nav.bbycyj',
-        component: Main,
-        icon: 'ios-alarm',
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_OPERATION', 'ROLE_FINANCE', 'ROLE_RISK_CONTROL'],
-        },
-        children: [
-            {
-                path: 'index', title: 'nav.bbycyj', name: 'risk_exchange_index', component: resolve => {
-                    require(['./views/manage_risk/exchange.vue'], resolve);
-                }
-            }
-        ]
-    },
+    // {
+    //     path: '/risk_exchange',
+    //     name: 'risk_exchange',
+    //     title: 'nav.bbycyj',
+    //     component: Main,
+    //     icon: 'ios-alarm',
+    //     meta: {
+    //         roles: ['ROLE_ADMIN', 'ROLE_OPERATION', 'ROLE_FINANCE', 'ROLE_RISK_CONTROL'],
+    //     },
+    //     children: [
+    //         {
+    //             path: 'index', title: 'nav.bbycyj', name: 'risk_exchange_index', component: resolve => {
+    //                 require(['./views/manage_risk/exchange.vue'], resolve);
+    //             }
+    //         }
+    //     ]
+    // },
     {
         path: '/risk_otc',
         name: 'risk_otc',
@@ -1210,23 +1193,23 @@ export const riskRouter = [
             }
         ]
     },
-    {
-        path: '/risk_markt',
-        name: 'risk_markt',
-        title: 'nav.scyjgz',
-        component: Main,
-        icon: 'ios-bookmarks-outline',
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_RISK_CONTROL'],
-        },
-        children: [
-            {
-                path: 'index', title: 'nav.scyjgz', name: 'risk_markt_index', component: resolve => {
-                    require(['./views/manage_risk/markt.vue'], resolve);
-                }
-            }
-        ]
-    }
+    // {
+    //     path: '/risk_markt',
+    //     name: 'risk_markt',
+    //     title: 'nav.scyjgz',
+    //     component: Main,
+    //     icon: 'ios-bookmarks-outline',
+    //     meta: {
+    //         roles: ['ROLE_ADMIN', 'ROLE_RISK_CONTROL'],
+    //     },
+    //     children: [
+    //         {
+    //             path: 'index', title: 'nav.scyjgz', name: 'risk_markt_index', component: resolve => {
+    //                 require(['./views/manage_risk/markt.vue'], resolve);
+    //             }
+    //         }
+    //     ]
+    // }
 ];
 
 export const operationRouter = [
@@ -1298,23 +1281,23 @@ export const operationRouter = [
     //         }
     //     ]
     // },
-    {
-        path: '/operation_market',
-        name: 'operation_market',
-        title: 'nav.tjsc',
-        icon: 'social-dropbox',
-        component: Main,
-        meta: {
-            roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
-        },
-        children: [
-            {
-                path: 'index', title: 'nav.tjsc', name: 'operation_market_index', component: resolve => {
-                    require(['./views/manage_operation/operation_market.vue'], resolve);
-                }
-            }
-        ]
-    },
+    // {
+    //     path: '/operation_market',
+    //     name: 'operation_market',
+    //     title: 'nav.tjsc',
+    //     icon: 'social-dropbox',
+    //     component: Main,
+    //     meta: {
+    //         roles: ['ROLE_ADMIN', 'ROLE_OPERATION'],
+    //     },
+    //     children: [
+    //         {
+    //             path: 'index', title: 'nav.tjsc', name: 'operation_market_index', component: resolve => {
+    //                 require(['./views/manage_operation/operation_market.vue'], resolve);
+    //             }
+    //         }
+    //     ]
+    // },
     {
         path: '/operation_placard',
         name: 'operation_placard',

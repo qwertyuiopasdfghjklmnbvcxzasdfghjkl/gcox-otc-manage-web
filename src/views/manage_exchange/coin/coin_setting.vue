@@ -1,9 +1,9 @@
 <template>
-    <div class="coin_setting" style="width:635px;background: #fff;position:relative;">
+    <Card class="coin_setting" style="width:635px;background: #fff;position:relative;">
         <i @click="closeDialog" class="ivu-icon ivu-icon-close" style="float:right;cursor:pointer;"></i>
         <Tabs style="backgroung:#fff;">
             <TabPane :label="vm.$t('exchange.tbsz')">
-                <Card style="width:500px;">
+                <Card style="width:100%;">
                     <Row style="border-bottom:1px solid #e9eaec;height:30px; line-height:30px;">
                         <Col span="8">{{vm.$t('exchange.dh')}}</Col>
                         <Col span="8">{{data1.symbol}}</Col>
@@ -12,12 +12,12 @@
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px;">
                         <Col span="8">{{vm.$t('exchange.qxmc')}}</Col>
                         <Col span="8">{{vm.$t('exchange.dqzt')}}</Col>
-                        <Col span="8">{{vm.$t('common.xg')}}</Col>
+                        <Col span="8" style="text-align:right">{{vm.$t('common.xg')}}</Col>
                     </Row>
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px;">
                         <Col span="8">{{vm.$t('exchange.qxzt')}}</Col>
                         <Col span="8">{{item.withdrawFlag===1? vm.$t('exchange.zc'):vm.$t('exchange.zt')}}</Col>
-                        <Col span="8" style="text-align:right;margin-left:-15px;">
+                        <Col span="8" style="text-align:right">
                             <Button @click="updataInsertSymbol('withdrawFlag')" type="primary">
                                 {{item.withdrawFlag===2? vm.$t('exchange.zc'):vm.$t('exchange.zt')}}
                             </Button>
@@ -26,7 +26,7 @@
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px;">
                         <Col span="8">{{vm.$t('exchange.zxtbsl')}}</Col>
                         <Col span="8">{{data1.minWithdrawQuantity2 || 0}}</Col>
-                        <Col span="8">
+                        <Col span="8" style="text-align:right">
                             <!-- <numberbox ref="price" :style="baseStyle" v-if="!isMarket" :accuracy="fixedNumber" class="formel-textbox" type="text" v-model="formData.price" :readonly="isMarket"/> -->
                             <numberbox ref="price" style="width:80px;border:1px solid #dddee1;" type="text"
                                        v-model="minWithdrawQuantity"/>
@@ -37,25 +37,25 @@
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px;">
                         <Col span="8">{{vm.$t('exchange.dczdtbsl')}}</Col>
                         <Col span="8">{{data1.withdrawOnceLimit || 0}}</Col>
-                        <Col span="8">
+                        <Col span="8" style="text-align:right">
                            <numberbox ref="price" style="width:80px;border:1px solid #dddee1;" type="text"
                                        v-model="withdrawOnceLimit"/>
-                            <Button @click="tabs('withdrawOnceLimit')" type="primary">{{vm.$t('common.bc')}}</Button>
+                            <Button @click="updataInsertSymbol('withdrawOnceLimit')" type="primary">{{vm.$t('common.bc')}}</Button>
                         </Col>
                     </Row>
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px;">
                         <Col span="8">{{vm.$t('exchange.drzdtbsl')}}</Col>
                         <Col span="8">{{data1.withdrawDailyLimit || 0}}</Col>
-                        <Col span="8">
+                        <Col span="8" style="text-align:right">
                            <numberbox ref="price" style="width:80px;border:1px solid #dddee1;" type="text"
                                        v-model="withdrawDailyLimit"/>
-                            <Button @click="tabs('withdrawDailyLimit')" type="primary">{{vm.$t('common.bc')}}</Button>
+                            <Button @click="updataInsertSymbol('withdrawDailyLimit')" type="primary">{{vm.$t('common.bc')}}</Button>
                         </Col>
                     </Row>
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px; display:none">
                         <Col span="8">{{vm.$t('exchange.hssl')}}</Col>
                         <Col span="8">{{data1.convertQuantity || 0}}</Col>
-                        <Col span="8">
+                        <Col span="8" style="text-align:right">
                             <InputNumber v-model="convertQuantity"></InputNumber>
                             <Button @click="tabs('convertQuantity')" type="primary">{{vm.$t('common.bc')}}</Button>
                         </Col>
@@ -63,7 +63,7 @@
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px; display:none">
                         <Col span="8">{{vm.$t('exchange.sfbfb')}}</Col>
                         <Col span="8">{{data1.riseRatio || 0}}</Col>
-                        <!-- <Col span="8">
+                        <!-- <Col span="8" style="text-align:right">
                           <InputNumber v-model="riseRatio"></InputNumber>
                           <Button type="primary"  @click="tabs('riseRatio')">{{vm.$t('common.bc')}}</Button>
                         </Col> -->
@@ -71,13 +71,13 @@
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px; display:none">
                         <Col span="8">{{vm.$t('exchange.zjkgf')}}</Col>
                         <Col span="8">{{data1.bestMinerFee || 0}}</Col>
-                        <Col span="8">
+                        <Col span="8" style="text-align:right">
                         </Col>
                     </Row>
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px;">
                         <Col span="8">{{vm.$t('exchange.sxfgded')}}</Col>
-                        <Col span="8">{{data1.feeFixedAmount || 0}}</Col>
-                        <Col span="8">
+                        <Col span="8">{{item.feeFixedAmount || 0}}</Col>
+                        <Col span="8" style="text-align:right">
                             <InputNumber v-model="feeFixedAmount"></InputNumber>
                             <Button @click="tabs('feeFixedAmount')" type="primary">{{vm.$t('common.bc')}}</Button>
                         </Col>
@@ -86,8 +86,8 @@
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px;"
                          v-if="this.item.symbolType !== 2">
                         <Col span="8">{{vm.$t('exchange.kgf')}}</Col>
-                        <Col span="8">{{data1.minerFee || 0}}</Col>
-                        <Col span="8">
+                        <Col span="8">{{item.minerFee || 0}}</Col>
+                        <Col span="8" style="text-align:right">
                             <InputNumber v-model="minerFee"></InputNumber>
                             <Button @click="tabs('minerFee')" type="primary">{{vm.$t('common.bc')}}</Button>
                         </Col>
@@ -95,8 +95,8 @@
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px; "
                          v-if="this.item.symbolType === 2">
                         <Col span="8">GASPrice</Col>
-                        <Col span="8">{{data1.gasprice || 0}}</Col>
-                        <Col span="8">
+                        <Col span="8">{{item.gasprice || 0}}</Col>
+                        <Col span="8" style="text-align:right">
                             <InputNumber v-model="gasprice"></InputNumber>
                             <Button @click="tabs('gasprice')" type="primary">{{vm.$t('common.bc')}}</Button>
                         </Col>
@@ -104,8 +104,8 @@
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px;"
                          v-if="this.item.symbolType === 2">
                         <Col span="8">GASNumber</Col>
-                        <Col span="8">{{data1.gaslimit || 0}}</Col>
-                        <Col span="8">
+                        <Col span="8">{{item.gaslimit || 0}}</Col>
+                        <Col span="8" style="text-align:right">
                             <InputNumber v-model="gaslimit"></InputNumber>
                             <Button @click="tabs('gaslimit')" type="primary">{{vm.$t('common.bc')}}</Button>
                         </Col>
@@ -113,7 +113,7 @@
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px;">
                         <Col span="8">{{vm.$t('exchange.ksctxz')}}</Col>
                         <Col span="8">{{item.withdrawFastFlag | state }}</Col>
-                        <Col span="8">
+                        <Col span="8" style="text-align:right">
                             <Button @click="updataInsertSymbol('withdrawFastFlag')" type="primary">
                                 {{item.withdrawFastFlag === 1?
                                 vm.$t('exchange.gb') : vm.$t('exchange.kq')}}
@@ -123,7 +123,7 @@
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px;">
                         <Col span="8">{{vm.$t('exchange.kscted')}}</Col>
                         <Col span="8">{{item.withdrawFastQuantity || 0}}</Col>
-                        <Col span="8">
+                        <Col span="8" style="text-align:right">
                             <InputNumber v-model="withdrawFastQuantity"></InputNumber>
                             <Button @click="updataInsertSymbol('withdrawFastQuantity')" type="primary">
                                 {{vm.$t('common.bc')}}
@@ -133,7 +133,7 @@
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px;">
                         <Col span="8">{{vm.$t('exchange.kstxcs')}}</Col>
                         <Col span="8">{{item.withdrawFastCounts || 0}}</Col>
-                        <Col span="8">
+                        <Col span="8" style="text-align:right">
                             <InputNumber v-model="withdrawFastCounts"></InputNumber>
                             <Button @click="updataInsertSymbol('withdrawFastCounts')" type="primary">
                                 {{vm.$t('common.bc')}}
@@ -143,7 +143,7 @@
                     <Row style="margin-top：10px;border-bottom:1px solid #e9eaec;height:40px; line-height:40px;">
                         <Col span="8">{{vm.$t('exchange.zdshje')}}</Col>
                         <Col span="8">{{item.withdrawAutoAuditAmount || 0}}</Col>
-                        <Col span="8">
+                        <Col span="8" style="text-align:right">
                             <InputNumber v-model="withdrawAutoAuditAmount"></InputNumber>
                             <Button type="primary" @click="tabs('withdrawAutoAuditAmount')">{{vm.$t('common.bc')}}</Button>
                         </Col>
@@ -151,21 +151,21 @@
                 </Card>
             </TabPane>
             <TabPane :label="vm.$t('exchange.ctsz')">
-                <Card class="recharge_settings" style="width:500px;">
+                <Card class="recharge_settings" style="width:100%;">
                     <Row style="border-bottom:1px solid #e9eaec;height:30px; line-height:30px;">
                         <Col span="8">{{vm.$t('exchange.dh')}}</Col>
                         <Col span="8">{{item.symbol}}</Col>
-                        <Col span="8"></Col>
+                        <Col span="8" style="text-align:right"></Col>
                     </Row>
                     <Row style="margin-top:10px;border-top:1px solid #e9eaec;line-height:50px;">
                         <Col span="8">{{vm.$t('exchange.qxmc')}}</Col>
                         <Col span="8">{{vm.$t('exchange.dqzt')}}</Col>
-                        <Col span="8" style="text-align:right;margin-left:-14px;">{{vm.$t('common.xg')}}</Col>
+                        <Col span="8"  style="text-align:right">{{vm.$t('common.xg')}}</Col>
                     </Row>
                     <Row style="margin-top:10px;border-top:1px solid #e9eaec;line-height:50px;">
                         <Col span="8">{{vm.$t('exchange.qxzt')}}</Col>
                         <Col span="8">{{item.rechargeFlag===1? vm.$t('exchange.zc'): vm.$t('exchange.zt')}}</Col>
-                        <Col span="8" style="text-align:right;margin-left:-14px;">
+                        <Col span="8"  style="text-align:right">
                             <Button @click="competence()" type="primary">
                                 {{item.rechargeFlag===2? vm.$t('exchange.zc'): vm.$t('exchange.zt')}}
                             </Button>
@@ -174,7 +174,7 @@
                     <Row style="margin-top:10px;border-top:1px solid #e9eaec;line-height:50px;">
                         <Col span="8">{{vm.$t('exchange.ddqks')}}</Col>
                         <Col span="8">{{item.confirmBlock || 0}}</Col>
-                        <Col span="8">
+                        <Col span="8" style="text-align:right">
                             <InputNumber :max="999" :min="1" v-model="confirmBlock"></InputNumber>
                             <Button @click="tabs1()" type="primary">{{vm.$t('common.bc')}}</Button>
                         </Col>
@@ -182,7 +182,7 @@
                 </Card>
             </TabPane>
         </Tabs>
-    </div>
+    </Card>
 </template>
 
 <script>
@@ -238,7 +238,7 @@
                 };
                 data[propName] = this[propName];
                 currenyApi.updateSymbolWithdrawFees(data, (res) => {
-                    // this.getchangeInfoList();
+                    this.getchangeInfoList();
                     this.item[propName] = this[propName]
                     this.$Message.success({content: this.vm.$t('common.xgcg')});
                 }, (msg) => {
@@ -264,6 +264,7 @@
                 currenyApi.updateSymbol(data, (res) => {
                     this.$Message.success({content: this.vm.$t('common.xgcg')});
                     this.item[propName] = data[propName] || this[propName];
+                    this.getchangeInfoList();
                     // this.item.withdrawFlag = data.withdrawFlag;
                     // this.item[propName] = this.withdrawFastQuantity;        withdrawFastQuantity
                     // this.item.withdrawFastCounts = this.withdrawFastCounts; withdrawFastCounts
@@ -321,8 +322,9 @@
 <style lang="less" scoped>
     .ivu-tabs {
         background: #fff;
-        width: 600px;
-        padding-bottom: 50px;
+        z-index: 100;
+        // width: 600px;
+        // padding-bottom: 50px;
     }
 
     .ivu-card-bordered {
@@ -331,7 +333,8 @@
 
     .ivu-icon-close {
         position: absolute;
-        right: 12px;
-        top: 10px;
+        right: 16px;
+        top: 16px;
+        z-index: 101;
     }
 </style>

@@ -62,8 +62,8 @@
                 hideMenuText: false,
                 selected: localStorage.getItem('currentMenu') || 'kyc',
                 datas: [
-                    {id: 'kyc', path: 'kycauditing_index', name: this.$t('nav.kycsh'), menus: kycRouter},
-                    {id: 'otc', path: 'otc_data_statistics_index', name: 'OTC管理', menus: otcRouter},
+                    // {id: 'kyc', path: 'kycauditing_index', name: this.$t('nav.kycsh'), menus: kycRouter},
+                    {id: 'otc', path: 'otc_data_statistics_index', name: this.$t('nav.otcgl'), menus: otcRouter},
                     {id: 'exchange', path: 'exchange_data_statistics_index', name: this.$t('nav.bbgl'), menus: exchangeRouter},
                     { name: this.$t('nav.yhjbgl'), menus: rankRouter},
                     { name: this.$t('nav.yqgl'), menus: inviteRouter},

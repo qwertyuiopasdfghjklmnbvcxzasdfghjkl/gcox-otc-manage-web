@@ -963,6 +963,10 @@ export const fund = {
     jyyfs: '交易已发送',
 };
 export const nav = {
+    otcgl: 'OTC管理',
+    ssgl: '申诉管理',
+    shgl: '审核管理',
+    khhgk: '开户行管理',
     kycsh: 'KYC审核',
     bbgl: '币币管理',
     cwgl: '财务管理',
@@ -977,6 +981,7 @@ export const nav = {
     kycgl: 'KYC管理',
     sjtj: '数据统计',
     yhgl: '用户管理',
+    gggl: '广告管理',
     bzgl: '币种管理',
     jyscgl: '交易市场管理',
     dzgl: '地址管理',
@@ -1215,13 +1220,18 @@ export const invite = {
 };
 export const otc = {
     skfs: '收款方式',
+    khhxxbb: '开户行信息报表',
     khh: '开户行',
+    khhmc: '开户行名称',
     sfsx: '是否生效',
     yhk: '银行卡',
     wx: '微信',
     zfb: '支付宝',
     fbid: '法币ID',
+    fb: '法币',
+    xh: '序号',
     fbm: '法币名',
+    dyfb: '对应法币',
     fbdh: '法币代号',
     kycjb: 'KYC级别',
     mmfx: '买卖方向',
