@@ -71,7 +71,7 @@
 
 <script>
     import util from '../../libs/util';
-    import check from './check';
+    import check from './withdraw/check';
     import financeApi from '../../api/finance';
     import currenyApi from '../../api/currency';
 

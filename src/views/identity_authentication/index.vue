@@ -5,7 +5,7 @@
         <Form ref="searchForm" :model="searchData" :label-width="80">
             <Row>
                 <Col span="4">
-                    <FormItem label="姓名" prop="name">
+                    <FormItem :label="$t('otc.xm')" prop="name">
                         <Input v-model="searchData.name" style="width:200px"></Input>
                     </FormItem>
                 </Col>

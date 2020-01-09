@@ -16,15 +16,10 @@
 
                 <span>{{$t('otc.fb')}}</span>
                 <Input type="text" v-model="form.currency" style="width:150px"></Input>
-                <!-- <Select style="width:100px" v-model="form.currency">
-                    <Option value="0">{{$t('common.qb')}}</Option>
-                    <Option value="Taker">Taker</Option>
-                    <Option value="Maker">Maker</Option>
-                </Select> -->
 
                 <span>{{$t('common.zt')}}</span>
                 <Select style="width:100px" v-model="form.state">
-                    <Option value="">{{$t('common.qb')}}</Option>
+                    <Option :value="0">{{$t('common.qb')}}</Option>
                     <Option :value="1">{{this.$t('system.sx')}}</Option>
                     <Option :value="2">{{this.$t('system.bsx')}}</Option>
                 </Select>
@@ -49,7 +44,7 @@
                 form: {
                     bankName:null,
                     currency:null,
-                    state:null
+                    state: 0
                 },
                 size: 10,
                 size1: 10000,

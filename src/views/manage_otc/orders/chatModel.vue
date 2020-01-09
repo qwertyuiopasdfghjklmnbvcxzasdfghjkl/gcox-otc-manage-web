@@ -1,7 +1,7 @@
 <template>
     <Card style="width:500px;height:700px;overflow: auto;">
         <p slot="title">
-            聊天记录
+            {{vm.$t('otc.ltjl')}}
             <i class="ivu-icon ivu-icon-close" style="float:right;cursor:pointer;" @click="closeDialog"></i>
         </p>
         <div class="chat" v-for="data in data1" :key="data.id" :class="{right:leftUser!==data.userId}">
@@ -9,7 +9,7 @@
             <div class="chat-div">{{data.message}}</div>
             <span class="chat-span">{{data.createdAt}}</span>
         </div>
-        <div class="no-record" v-show="this.data1.length === 0">暂无聊天记录</div>
+        <div class="no-record" v-show="this.data1.length === 0">{{vm.$t('otc.zwltjl')}}</div>
     </Card>
 </template>
 
@@ -19,7 +19,9 @@ import util from '../../../libs/util'
 export default {
     props: ['orderNumber', 'type'],
     data () {
+        const vm = window.vm
         return {
+            vm: vm,
             data: [],
             leftUser: null,
             data1: [],

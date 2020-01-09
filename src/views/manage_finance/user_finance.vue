@@ -60,6 +60,7 @@
                     {title: this.$t('common.zje'), key: 'totalBalance'},
                     {title: this.$t('common.kyje'), key: 'availableBalance'},
                     {title: this.$t('common.djje'), key: 'frozenBalance'},
+                    {title: this.$t('monitoring.ggdjje'), key: 'adFrozenBalance'},
                     {title: this.$t('common.gxsj'), key: 'updatedAt'},
                 ],
                 data: [],

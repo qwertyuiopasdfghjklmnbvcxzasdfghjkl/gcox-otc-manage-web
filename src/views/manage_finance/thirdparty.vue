@@ -1,40 +1,43 @@
 <template>
     <Row style="margin-top:10px;">
-        <Card>
-            <p slot="title">{{$t('exchange.bzcztj')}}</p>
-            <Table ref="test2" :columns="columns1" :data="data1"></Table>
-            <Page :current="curPage1" :total="total1" @on-change="changePage1"
-                  :page-size="size" style="text-align:center;margin-top:20px;"></Page>
-        </Card>
+        <!--<Card>-->
+        <!--<p slot="title">{{$t('exchange.bzcztj')}}</p>-->
+        <!--<Table ref="test2" :columns="columns1" :data="data1"></Table>-->
+        <!--<Page :current="curPage1" :total="total1" @on-change="changePage1"-->
+        <!--:page-size="size" style="text-align:center;margin-top:20px;"></Page>-->
+        <!--</Card>-->
         <Card style="margin-top: 10px">
-            <p slot="title">{{$t('exchange.dsfczlb')}}</p>
-            <p style="margin-bottom: 20px">
-                {{$t('common.bz')}}：
-                <Select v-model="formData.symbol" style="width: 200px" :clearable="true">
-                    <Option value="0">{{$t('common.qb')}}</Option>
-                    <Option value="USSD">USSD</Option>
-                    <Option value="SATO">SATO</Option>
-                </Select>
-                {{$t('common.cjsj')}}：
-                <DatePicker type="datetime" v-model="formData.createdStart" :placeholder="$t('common.kssj')"
-                            format="yyyy-MM-dd HH:mm:ss"
-                            style="width: 200px"></DatePicker>
-                <DatePicker type="datetime" v-model="formData.createdEnd" :placeholder="$t('common.jssj')"
-                            format="yyyy-MM-dd HH:mm:ss"
-                            style="width: 200px"></DatePicker>
-                {{$t('common.yhm')}}：
-                <Input v-model="formData.username" clearable style="width: 200px"
-                       :placeholder="$t('common.qsryhm')"></Input>
-                {{$t('common.sl')}}：
-                <Select v-model="amount" style="width: 200px">
-                    <Option value="0">{{$t('common.qb')}}</Option>
-                    <Option value="1">{{$t('common.xy1')}}</Option>
-                    <Option value="2">{{$t('common.dy1xy1000')}}</Option>
-                    <Option value="3">{{$t('common.dy1000xy10000')}}</Option>
-                    <Option value="4">{{$t('common.dy10000')}}</Option>
-                </Select>
-                <Button type="primary" @click="curPage=1;getfindUser()">{{$t('common.cx')}}</Button>
+            <p slot="title">
+                {{$t('exchange.usdtczlb')}}
+                <Button type="primary" @click="outExl()">{{$t('systemlog.dc')}}</Button>
             </p>
+            <!--<p style="margin-bottom: 20px">-->
+            <!--{{$t('common.bz')}}：-->
+            <!--<Select v-model="formData.symbol" style="width: 200px" :clearable="true">-->
+            <!--<Option value="0">{{$t('common.qb')}}</Option>-->
+            <!--<Option value="USSD">USSD</Option>-->
+            <!--<Option value="SATO">SATO</Option>-->
+            <!--</Select>-->
+            <!--{{$t('common.cjsj')}}：-->
+            <!--<DatePicker type="datetime" v-model="formData.createdStart" :placeholder="$t('common.kssj')"-->
+            <!--format="yyyy-MM-dd HH:mm:ss"-->
+            <!--style="width: 200px"></DatePicker>-->
+            <!--<DatePicker type="datetime" v-model="formData.createdEnd" :placeholder="$t('common.jssj')"-->
+            <!--format="yyyy-MM-dd HH:mm:ss"-->
+            <!--style="width: 200px"></DatePicker>-->
+            <!--{{$t('common.yhm')}}：-->
+            <!--<Input v-model="formData.username" clearable style="width: 200px"-->
+            <!--:placeholder="$t('common.qsryhm')"></Input>-->
+            <!--{{$t('common.sl')}}：-->
+            <!--<Select v-model="amount" style="width: 200px">-->
+            <!--<Option value="0">{{$t('common.qb')}}</Option>-->
+            <!--<Option value="1">{{$t('common.xy1')}}</Option>-->
+            <!--<Option value="2">{{$t('common.dy1xy1000')}}</Option>-->
+            <!--<Option value="3">{{$t('common.dy1000xy10000')}}</Option>-->
+            <!--<Option value="4">{{$t('common.dy10000')}}</Option>-->
+            <!--</Select>-->
+            <!--<Button type="primary" @click="curPage=1;getfindUser()">{{$t('common.cx')}}</Button>-->
+            <!--</p>-->
             <Table ref="test2" :columns="columns" :data="data"></Table>
             <Page :current="curPage" :total="total" @on-change="changePage"
                   :page-size="size" style="text-align:center;margin-top:20px;"></Page>
@@ -91,7 +94,7 @@
         },
         created () {
             this.getfindUser();
-            this.getStatisticList();
+            // this.getStatisticList();
         },
         methods: {
             getStatisticList () {
@@ -160,6 +163,9 @@
             changePage1 (page) {
                 this.curPage1 = page;
                 this.getfindUser();
+            },
+            outExl () {
+                util.outExl('api/bm/financialManage/import/recharge',{});
             }
         }
     };

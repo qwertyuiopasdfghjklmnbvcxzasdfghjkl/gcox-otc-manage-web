@@ -27,7 +27,7 @@
 
 <script>
     import util from '../../libs/util';
-    import virtualDialog from './virtual_dialog';
+    import virtualDialog from './virtual/virtual_dialog';
     import dialogList from './components/dialog_list';
     import voteApi from '@/api/vote';
     import currenyApi from '../../api/currency';

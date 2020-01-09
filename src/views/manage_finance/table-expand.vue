@@ -61,7 +61,6 @@
                                             util.setDialog(errorLogDetail, {
                                                 errorLogId: params.row.errorLogId
                                             });
-
                                         }
                                     }
                                 }, this.$t('monitoring.ckxqlj'))
