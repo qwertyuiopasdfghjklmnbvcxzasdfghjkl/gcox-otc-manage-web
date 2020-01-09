@@ -1,7 +1,7 @@
 <template>
   <Card style="width:1000px;">
         <p slot="title">
-            查看订单
+            {{vm.$t('otc.ckdd')}}
             <i class="ivu-icon ivu-icon-close" style="float:right;cursor:pointer;" @click="closeDialog"></i>
         </p>
         <Table :columns="columns1" :data="data1"></Table>
@@ -15,31 +15,33 @@ import otcApi from '../../../api/otc'
 export default {
     props: ['msgNumber'],
     data () {
+        const vm = window.vm;
         return {
+            vm: vm,
             columns1: [
-                {title: '订单号', key: 'orderNumber'},
-                {title: '卖家账号', key: 'fromUserName'},
-                {title: '买家账号', key: 'toUserName'},
-                {title: '交易量', key: 'symbolCount',
+                {title: vm.$t('risk.ddh'), key: 'orderNumber'},
+                {title: vm.$t('otc.maijzh'), key: 'fromUserName'},
+                {title: vm.$t('otc.mjzh'), key: 'toUserName'},
+                {title: vm.$t('otc.jyl'), key: 'symbolCount',
                     render: (h, params) => {
                         return h('div', [params.row.symbolCount, params.row.symbol]);
                     }
                 },
-                {title: '支付金额', key: 'currencyCount',
+                {title: vm.$t('otc.zfje'), key: 'currencyCount',
                     render: (h, params) => {
                         return h('div', [params.row.currencyCount, 'CNY']);
                     }
                 },
-                {title: '交易状态', key: 'state',
-                    // （1：交易中、2：已完成、3：已取消） 
-                     render: (h, params) => { 
+                {title: vm.$t('otc.jyzt'), key: 'state',
+                    // （1：交易中、2：已完成、3：已取消）
+                     render: (h, params) => {
                         return h('div', this.switchStaus(params.row.state, params.row.payState))
                     }
                 },
-                {title: '交易限时', key: 'surplus_Time', render: (h, params) => {
+                {title: vm.$t('otc.jysx'), key: 'surplus_Time', render: (h, params) => {
                     return h('div', [params.row.surplus_Time] )
                 }},
-                {title: '操作', key: 'action', render: (h, params) => {
+                {title: vm.$t('common.cz'), key: 'action', render: (h, params) => {
                     return h('div', [
                         h('Button', {
                             props: {type: 'primary', size: 'small'},
@@ -51,7 +53,7 @@ export default {
                                     });
                                 }
                             }
-                        }, '聊天记录')
+                        }, vm.$t('otc.ltjl'))
                     ])
                 }}
             ],
@@ -62,17 +64,14 @@ export default {
         this.getOrderInfo()
     },
     methods: {
-        switchStaus(state, payState) { 
+        switchStaus(state, payState) {
             switch(state, payState){
                 case 1:
-                    return payState === 1 ? '已付款' : '未付款'
-                    break;
+                    return payState === 1 ? this.vm.$t('otc.yfk') : this.vm.$t('otc.wfk')
                 case 2:
-                    return '已完成'
-                    break;
+                    return this.vm.$t('common.ywc')
                 case 3:
-                    return '已取消'
-                    break;
+                    return this.vm.$t('common.yqx')
             }
         },
         aaa (curPrice, symbolCount) {

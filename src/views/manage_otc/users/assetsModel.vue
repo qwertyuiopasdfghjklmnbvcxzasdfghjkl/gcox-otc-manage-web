@@ -1,69 +1,73 @@
 <template>
     <Card style="width:800px;">
         <p slot="title">
-            资产信息
+            {{vm.$t('otc.zcxx')}}
             <i class="ivu-icon ivu-icon-close" style="float:right;cursor:pointer;" @click="closeDialog"></i>
         </p>
         <div style="font-size:16px;">
             <Row>
-                {{this.username}}的资产信息
+                {{vm.$t('otc.xxdzcxx').format(this.username)}}
             </Row>
             <Row>
-                当前总估值：{{this.btcPrice}}BTC/{{this.currencyPrice}}CNY
+                {{vm.$t('otc.dqzgz')}}：{{this.btcPrice}}BTC/{{this.currencyPrice}}CNY
             </Row>
         </div>
         <Table :columns="columns" :data="datas"></Table>
-        <Page :current="curPage" :total="total" @on-change="changePage" style="text-align:center;margin-top:20px;"></Page>  
+        <Page :current="curPage" :total="total" @on-change="changePage"
+              style="text-align:center;margin-top:20px;"></Page>
     </Card>
 </template>
 
 <script>
-import util from '../../../libs/util';
-import otcApi from '../../../api/otc'
-export default {
-    props: ['userId'],
-    data () {
-        return {
-            curPage: 1, 
-            total: 0,
-            columns: [
-                {title: '币种', key: 'accountName'},
-                {title: '总额', key: 'totalBalance'},
-                {title: '可用余额', key: 'availableBalance'},
-                {title: '冻结余额', key: 'frozenBalance'}
-            ],
-            datas: [],
-            username: '',
-            btcPrice: null,
-            currencyPrice: null
-        };
-    },
-    created () {
-        this.getfindAssetInfo()
-    },
-    methods: {
-        getfindAssetInfo () {
-            otcApi.findAssetInfoManage(this.curPage, {
-                userId: this.userId
-            }, (res, total) => {
-                this.total = total
-                this.username = res[0].userName
-                this.datas = res[0].accountDTO
-                this.btcPrice = res[0].btcPrice
-                this.currencyPrice =  res[0].currencyPrice
-            }, (msg) => {
-                this.$Message.error({content: msg})
-            })
+    import util from '../../../libs/util';
+    import otcApi from '../../../api/otc';
+
+    export default {
+        props: ['userId'],
+        data () {
+            const vm = window.vm;
+            return {
+                vm: vm,
+                curPage: 1,
+                total: 0,
+                columns: [
+                    {title: vm.$t('common.bz'), key: 'accountName'},
+                    {title: vm.$t('otc.ze'), key: 'totalBalance'},
+                    {title: vm.$t('common.kyye'), key: 'availableBalance'},
+                    {title: vm.$t('common.djje'), key: 'frozenBalance'}
+                ],
+                datas: [],
+                username: '',
+                btcPrice: null,
+                currencyPrice: null
+            };
         },
-        changePage (page) {
-            this.curPage = page
-            this.getfindAssetInfo()
+        created () {
+            this.getfindAssetInfo();
         },
-        closeDialog () {
-            this.$emit('removeDialog')
+        methods: {
+            getfindAssetInfo () {
+                otcApi.findAssetInfoManage(this.curPage, {
+                    userId: this.userId
+                }, (res, total) => {
+                    this.total = total;
+                    this.username = res[0].userName;
+                    this.datas = res[0].accountDTO;
+                    this.btcPrice = res[0].btcPrice;
+                    this.currencyPrice = res[0].currencyPrice;
+                }, (msg) => {
+                    this.$Message.error({content: msg});
+                });
+            },
+            changePage (page) {
+                this.curPage = page;
+                this.getfindAssetInfo();
+            },
+            closeDialog () {
+                this.$emit('removeDialog');
+            }
         }
-    }
-};
+    };
 </script>
 
 <style lang="less">

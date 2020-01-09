@@ -1,55 +1,58 @@
 <template>
     <Card style="width:500px;">
         <p slot="title">
-            给用户{{this.username}}发送系统消息
+            {{vm.$t('otc.gyhfsxx').format(this.username)}}
             <i class="ivu-icon ivu-icon-close" style="float:right;cursor:pointer;" @click="closeDialog"></i>
         </p>
         <Form ref="formItem" :model="formItem" :rules="ruleItem" style="margin:0 20px;">
-            <FormItem prop="msg" label="请输入系统消息">
-                <Input v-model="formItem.msg" type="textarea" :rows="10" placeholder="多行输入"></Input>
+            <FormItem prop="msg" :label="vm.$t('kyc.qsrxtxx')">
+                <Input v-model="formItem.msg" type="textarea" :rows="10" :placeholder="vm.$t('kyc.dhsr')"></Input>
             </FormItem>
             <FormItem>
-                <Button type="primary" style="width:100px;" @click="sendMessage">发送</Button>
+                <Button type="primary" style="width:100px;" @click="sendMessage">{{vm.$t('kyc.fs')}}</Button>
             </FormItem>
         </Form>
     </Card>
 </template>
 
 <script>
-import otcApi from '../../../api/otc'
-export default {
-    props: ['userId', 'username'],
-    data () {
-        return {
-            formItem: {
-                msg: ''
+    import otcApi from '../../../api/otc';
+
+    export default {
+        props: ['userId', 'username'],
+        data () {
+            const vm = window.vm;
+            return {
+                vm: vm,
+                formItem: {
+                    msg: ''
+                },
+                ruleItem: {
+                    msg: [
+                        {required: true, message: this.vm.$t('kyc.qsrxtxx')}
+                    ]
+                }
+            };
+        },
+        methods: {
+            closeDialog () {
+                this.$emit('removeDialog');
             },
-            ruleItem: {
-                msg: [
-                    {required: true, message: '请输入系统消息'}
-                ]
+            sendMessage () {
+                this.$refs.formItem.validate((valid) => {
+                    if (valid) {
+                        otcApi.sendSystemMessageManage({
+                            userId: this.userId,
+                            msg: this.formItem.msg
+                        }, (res) => {
+                            this.$Message.success({content: this.vm.$t('kyc.fscg')});
+                            this.$emit('removeDialog');
+                        });
+                    }
+                });
             }
         }
-    },
-    methods: {
-        closeDialog () {
-            this.$emit('removeDialog');
-        },
-        sendMessage () {
-            this.$refs.formItem.validate((valid) => {
-                if (valid) {
-                    otcApi.sendSystemMessageManage({
-                        userId: this.userId,
-                        msg: this.formItem.msg
-                    }, (res) => {
-                        this.$Message.success({content: '发送成功'})
-                        this.$emit('removeDialog');
-                    })
-                 }
-            })
-        }
-    }
-}
+    };
 </script>
 
 <style>

@@ -78,8 +78,8 @@
                     <Row style="margin-bottom:20px;">
                         <Col span="10">{{$t('operation.sgts')}}：
                             <RadioGroup v-model="datas.androidPromptUpdate">
-                                <Radio label="0">不推送</Radio>
-                                <Radio label="1">推送</Radio>
+                                <Radio label="0">{{$t('operation.bts')}}</Radio>
+                                <Radio label="1">{{$t('operation.ts')}}</Radio>
                             </RadioGroup>
                         </Col>
                         <Col span="10">
@@ -141,8 +141,8 @@
                     <Row style="margin-bottom:20px;">
                         <Col span="10">{{$t('operation.sgts')}}：
                             <RadioGroup v-model="datas.applePromptUpdate">
-                                <Radio label="0">不推送</Radio>
-                                <Radio label="1">推送</Radio>
+                                <Radio label="0">{{$t('operation.bts')}}</Radio>
+                                <Radio label="1">{{$t('operation.ts')}}</Radio>
                             </RadioGroup>
                         </Col>
                         <Col span="10">

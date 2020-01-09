@@ -9,7 +9,7 @@
         </Row>
         <Row style="margin-bottom:10px;" v-for="(data,index) in exchangeItem" v-if="data.paramGroup == 1"
              :key="data.id">
-            <Col span="6">{{data.codeDesc}}</Col>
+            <Col span="6">{{lang === 'zh-CN'?data.codeDesc:data.code}}</Col>
             <Col span="6" v-if="data.code !== 'loginLockCount'">{{data.value}}</Col>
             <Col span="3" v-if="data.code === 'loginLockCount'">{{data.value}}{{$t('system.c')}}</Col>
             <Col span="3" v-if="data.code === 'loginLockCount'">{{data.value2}}{{$t('system.fz')}}</Col>
@@ -58,6 +58,7 @@
                 return callback();
             };
             return {
+                lang: window.localStorage.language,
                 curPage: 1,
                 total: 0,
                 columnsSymbolData: [],

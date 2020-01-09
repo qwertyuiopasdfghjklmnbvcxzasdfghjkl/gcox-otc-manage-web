@@ -8,7 +8,7 @@
         </Row>
         <Row style="margin-bottom:10px;" v-for="(data,index) in exchangeItem" v-if="data.paramGroup == 2"
              :key="index">
-            <Col span="6">{{data.codeDesc}}</Col>
+            <Col span="6">{{lang === 'zh-CN'?data.codeDesc:data.code}}</Col>
             <Col span="6" v-if="data.code !== 'otcCoinType'">{{data.value}}</Col>
             <Col span="12"
                  v-if="data.code !== 'otcCoinType' && data.code !== 'cancelOrderCountLimit' && data.code !==
@@ -59,6 +59,7 @@
                 return callback();
             };
             return {
+                lang: window.localStorage.language,
                 curPage: 1,
                 total: 0,
                 columnsSymbolData: [],

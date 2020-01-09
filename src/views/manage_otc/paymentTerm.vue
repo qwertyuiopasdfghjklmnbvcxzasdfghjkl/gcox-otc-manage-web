@@ -11,9 +11,6 @@
             <Select v-model="form.payType" style="width: 200px;">
                 <Option value="0">{{$t('common.qb')}}</Option>
                 <Option value="1">{{$t('otc.yhk')}}</Option>
-                <!--<Option value="2">{{$t('otc.wx')}}</Option>-->
-                <!--<Option value="3">{{$t('otc.zfb')}}</Option>-->
-                <!--<Option value="4">Paypal</Option>-->
             </Select>
             <span>{{$t('common.xm')}}</span>
             <Input v-model="form.cardName" style="width: 200px;"/>
@@ -104,7 +101,6 @@
         },
         methods: {
             outExl(){
-                // GET /otcManage/otcPayType/exportOtcPayTypeExcel
                 // 导出用户收款方式报表
                 util.outExl('api/bm/otcManage/otcPayType/exportOtcPayTypeExcel', this.outData)
             },

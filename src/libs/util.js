@@ -51,6 +51,7 @@ util.ajax = axios.create({
 util.ajax.interceptors.request.use(function (config) {
     config.headers.common['Authorization'] = Cookies.get('Authorization');
     config.headers.common['roles'] = Cookies.get('roles');
+    config.headers.common['Language'] = localStorage.language;
     // 在发送请求之前做些什么
     return config;
 }, function (error) {

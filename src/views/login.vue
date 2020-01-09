@@ -75,6 +75,7 @@
         created () {
             this.getL();
             this.getList();
+            window.localStorage['language'] = 'zh-CN'
         },
         methods: {
             handleSubmit () {

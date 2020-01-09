@@ -506,7 +506,7 @@ extend.updataCms = updataCms;
 const batchDistribute = function (data, success, error) {
     api.post(`api/bm/promotionManage/distribute/import/batchDistribute`, data,(res) => {
         if (res.rst === 1) {
-            success && success(res.data);
+            success && success(res.data, res.msg);
         } else {
             error && error(res.msg);
         }

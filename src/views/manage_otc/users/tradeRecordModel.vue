@@ -4,7 +4,7 @@
             <span style="margin-right:20px;">交易信息</span>
             <span style="font-weight:normal;">该用户已完成 {{this.exchangeTotal !== null ? this.exchangeTotal : 0}} 笔交易，好评率：{{this.praiseRate !== null ? this.praiseRate : 100}}%</span>
             <i class="ivu-icon ivu-icon-close" style="float:right;cursor:pointer;" @click="closeDialog"></i>
-            
+
         </p>
         <Tabs>
             <TabPane label="订单信息">
@@ -32,7 +32,7 @@ export default {
             curPage2: 1,
             total2: 0,
             columns1: [
-                {title: '订单号', key: 'orderNum'},
+                {title: vm.$t('risk.ddh'), key: 'orderNum'},
                 {title: '类型', key: 'exchangeType', render: (h, params) => {
                     return h('div', [params.row.exchangeType === 1 ? '购买' : '出售']);
                 }},
@@ -52,7 +52,7 @@ export default {
                         return h('div', [params.row.symbolCount, params.row.symbol])
                     }
                 },
-                
+
                 {title: '金额', key: 'currencyCount',
                     render: (h, params) => {
                         return h('div', [params.row.currencyCount, params.row.currency])
@@ -105,7 +105,7 @@ export default {
         this.getfindOrderInfo()
     },
     methods: {
-        switchStaus(state, payState) { 
+        switchStaus(state, payState) {
             switch(state){
                 case 1:
                     return payState === 1 ? '已付款' : '未付款'
@@ -138,7 +138,7 @@ export default {
             }, (res, total) => {
                  if (res.length !== 0) {
                     this.praiseRate = res[0].praiseRate
-                    this.exchangeTotal = res[0].exchangeTotal 
+                    this.exchangeTotal = res[0].exchangeTotal
                     this.total = total
                     this.datas1 = res[0].orderInfoDTOS
                  }

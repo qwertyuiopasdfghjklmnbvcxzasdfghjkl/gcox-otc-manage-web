@@ -13,7 +13,8 @@
                 <Icon type="load-c" size=18 class="demo-spin-icon-load"></Icon>
                 <div>{{vm.$t('operation.ffz')}}</div>
             </Spin>
-            <Table v-if="data.length" :columns="columns" :data="data" style="margin-top:20px;"></Table>
+            <p class="msg" v-show="msg">{{msg}}</p>
+            <Table v-if="data.length" :columns="columns" height="400" :data="data" style="margin-top:20px;"></Table>
         </div>
     </Card>
 </template>
@@ -39,6 +40,7 @@
                     {title: vm.$t('finance.sbyy'), key: 'msg'},
                 ],
                 load: false,
+                msg:null
             };
         },
         created () {
@@ -60,8 +62,9 @@
                 }
                 file.append('file', this.file);
                 this.load = true
-                extendApi.batchDistribute(file, res => {
+                extendApi.batchDistribute(file, (res,msg) => {
                     this.data = res;
+                    this.msg = msg;
                     this.load = false
                 }, msg => {
                     this.$Message.error({content: msg});
@@ -91,6 +94,12 @@
         }
         to {
             transform: rotate(360deg);
+        }
+    }
+    .tab{
+        .msg{
+            margin-top: 15px;
+            color: #ef6e13;
         }
     }
 </style>
