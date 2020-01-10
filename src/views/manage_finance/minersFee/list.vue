@@ -22,6 +22,8 @@
 </template>
 
 <script>
+    import otcApi from '../../../api/otc';
+    import util from '../../../libs/util';
     export default {
         name: 'list',
         data () {
@@ -43,7 +45,8 @@
                     {title: 'Txid', key: 'symbol'},
                     {title: vm.$t('common.zt'), key: 'symbol'},
                     {title: vm.$t('finance.czr'), key: 'symbol'}
-                ]
+                ],
+                outData: {}
             };
         },
         created () {
@@ -51,8 +54,20 @@
         },
         methods: {
             getList () {
+                let data = {
+                    size: this.size,
+                    page: this.page,
+                    username: this.form.username
+                };
+                this.outData = data;
+                otcApi.selectMinerDistributeList(data, (res, total) => {
+                    this.data = res;
+                    this.total = total;
+                }, msg => {
+                });
             },
             outExl () {
+                util.outExl('api/bm/minerFee/distribute/exportDistributeRecordExcel', this.outData);
             },
             changePage (e) {
                 this.page = e;

@@ -434,7 +434,7 @@ const findBankList = function (size,page,data, success, error) {
 };
 otc.findBankList = findBankList;
 
-// 新增/修改开户行管理 api/bm/otcBank/addOrUpdate
+// 新增/修改开户行管理
 const addOrUpdate = function (data, success, error) {
     api.post(`api/bm/otcBank/addOrUpdate`, data, (res) => {
         if (res.rst === 1) {
@@ -445,5 +445,41 @@ const addOrUpdate = function (data, success, error) {
     }, error);
 };
 otc.addOrUpdate = addOrUpdate;
+
+// 矿工费分发展示
+const selectMinerDistributeList = function (data, success, error) {
+    api.post(`api/bm/minerFee/distribute/selectMinerDistributeList/${data.size}/${data.page} `, data, (res) => {
+        if (res.rst === 1) {
+            success && success(res.data,res.total);
+        } else {
+            error && error(res.msg);
+        }
+    }, error);
+};
+otc.selectMinerDistributeList = selectMinerDistributeList;
+
+// 分发矿工费
+const distributeFee = function (data, success, error) {
+    api.post(`api/bm/minerFee/distribute/distributeFee`, data, (res) => {
+        if (res.rst === 1) {
+            success && success(res.data);
+        } else {
+            error && error(res.msg);
+        }
+    }, error);
+};
+otc.distributeFee = distributeFee;
+
+// 分发记录展示
+const selectDistributeRecordList = function (data, success, error) {
+    api.post(`minerFee/distribute/selectDistributeRecordList/${data.size}/${data.page}`, data, (res) => {
+        if (res.rst === 1) {
+            success && success(res.data);
+        } else {
+            error && error(res.msg);
+        }
+    }, error);
+};
+otc.selectDistributeRecordList = selectDistributeRecordList;
 
 export default otc;

@@ -37,7 +37,8 @@ util.setDialog = setDialog;
 // const ajaxUrl = env === 'production' ? `${location.protocol}//${location.host}/` : 'http://manage.satox.bitark.io';
 // const ajaxUrl = env === 'production' ? `${location.protocol}//${location.host}/` : 'http://manage.sit.gcox.cc/';
 // const ajaxUrl = env === 'production' ? `${location.protocol}//${location.host}/` : 'http://manage.otc.gcox.sit.koall.io/';
-const ajaxUrl = env === 'production' ? `${location.protocol}//${location.host}/` : 'http://manage.gcoxotc-test.lab.ssss.so/';
+// const ajaxUrl = env === 'production' ? `${location.protocol}//${location.host}/` : 'http://manage.gcoxotc-test.lab.ssss.so/';
+const ajaxUrl = env === 'production' ? `${location.protocol}//${location.host}/` : 'http://manage.gcoxotc-dev.lab.ssss.so/';
 
 util.baseURL = ajaxUrl;
 

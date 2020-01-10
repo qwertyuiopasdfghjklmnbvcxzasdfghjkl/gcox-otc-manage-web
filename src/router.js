@@ -1088,6 +1088,23 @@ export const financeRouter = [
                 }
             }
         ]
+    },
+    {
+        path: '/minersFee',
+        name: 'minersFee',
+        title: 'nav.kgfff',
+        component: Main,
+        icon: 'stats-bars',
+        meta: {
+            roles: ['ROLE_ADMIN', 'ROLE_FINANCE'],
+        },
+        children: [
+            {
+                path: 'index', title: 'nav.kgfff', name: 'minersFee_index', component: resolve => {
+                    require(['./views/manage_finance/minersFee.vue'], resolve);
+                }
+            }
+        ]
     }
 ];
 
