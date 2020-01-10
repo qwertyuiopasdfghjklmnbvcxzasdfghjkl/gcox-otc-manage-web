@@ -8,7 +8,6 @@
                     <Option value="appealUsername">{{$t('otc.ssrzh')}}</Option>
                     <Option value="oppositeUsername">{{$t('otc.bssrzh')}}</Option>
                     <Option value="orderNumber">{{$t('otc.ssddbh')}}</Option>
-                    <!-- <Option value="symbol">代币币种</Option> -->
                 </Select>
                 <Input v-model="searchContent" clearable style="width: 300px;" :placeholder="$t('otc.cxnr')"></Input>
                 <Button type="primary" @click="curPage=1;unprocessed()">{{$t('common.cx')}}</Button>
@@ -36,13 +35,6 @@
                 </Col>
             </Row>
         </Card>
-        <!-- <Card v-for="(data, index) in datas" :key="index" style="margin-top:10px;">
-            <p slot="title" style="height:32px;line-height:32px;">
-              申诉编号：{{data.msgNumber}}
-              <Button type="primary" style="float:right;" @click="viewInfo(index)">申诉/被申诉人信息</Button>
-            </p>
-            <Table :columns="columns1" :data="[data]"></Table>
-        </Card> -->
         <Card style="margin-top:10px;">
             <Table :columns="columns1" :data="datas"></Table>
         </Card>
@@ -212,13 +204,12 @@
                         this.datas = res;
                     });
                 }
-
             }
         }
     };
 </script>
 
-<style lang=" scoped>
+<style lang="less">
 .refresh{width: 49px;height: 24px;background: url(../../images/frsh.png) center/cover no-repeat;background-size: contain;cursor: pointer;color: #2d8cf0;}
 .ivu-card-head-inner, .ivu-card-head p{display: flex !important;justify-content: space-between  !important;height: 40px !important; line-height: 40px !important;}
 </style>

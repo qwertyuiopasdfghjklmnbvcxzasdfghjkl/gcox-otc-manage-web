@@ -1,17 +1,18 @@
 <template>
     <Card style="width:1200px;">
         <p slot="title">
-            <span style="margin-right:20px;">交易信息</span>
-            <span style="font-weight:normal;">该用户已完成 {{this.exchangeTotal !== null ? this.exchangeTotal : 0}} 笔交易，好评率：{{this.praiseRate !== null ? this.praiseRate : 100}}%</span>
+            <span style="margin-right:20px;">{{vm.$t('otc.jyxx')}}</span>
+            <span style="font-weight:normal;">{{vm.$t('otc.gyhywc')}} {{this.exchangeTotal !== null ? this.exchangeTotal : 0}} ，
+                {{vm.$t('otc.hpl')}} {{this.praiseRate !== null ? this.praiseRate : 100}}%</span>
             <i class="ivu-icon ivu-icon-close" style="float:right;cursor:pointer;" @click="closeDialog"></i>
 
         </p>
         <Tabs>
-            <TabPane label="订单信息">
+            <TabPane :label="vm.$t('otc.ddxx')">
                 <Table :columns="columns1" :data="datas1"></Table>
                 <Page :current="curPage" :total="total" @on-change="changePage" style="text-align:center;margin-top:20px;"></Page>
             </TabPane>
-            <TabPane label="广告信息">
+            <TabPane :label="vm.$t('otc.ggxx')">
                 <Table :columns="columns2" :data="datas2"></Table>
                 <Page :current="curPage2" :total="total2" @on-change="changePage2" style="text-align:center;margin-top:20px;"></Page>
             </TabPane>
@@ -26,74 +27,76 @@ import otcApi from '../../../api/otc'
 export default {
     props: ['userId'],
     data () {
+        const vm = window.vm
         return {
+            vm: vm,
             curPage: 1,
             total: 0,
             curPage2: 1,
             total2: 0,
             columns1: [
                 {title: vm.$t('risk.ddh'), key: 'orderNum'},
-                {title: '类型', key: 'exchangeType', render: (h, params) => {
-                    return h('div', [params.row.exchangeType === 1 ? '购买' : '出售']);
+                {title: vm.$t('finance.lx'), key: 'exchangeType', render: (h, params) => {
+                    return h('div', [params.row.exchangeType === 1 ? vm.$t('otc.gm') : vm.$t('otc.cs')]);
                 }},
-                {title: '状态', key: 'state',
+                {title: vm.$t('common.zt'), key: 'state',
                     render: (h, params) => {
                         return h('div', this.switchStaus(params.row.state, params.row.payState));
                     }
                 },
-                {title: '币种', key: 'symbol'},
-                {title: '单价', key: 'unitPrice',
+                {title: vm.$t('common.bz'), key: 'symbol'},
+                {title: vm.$t('otc.dj'), key: 'unitPrice',
                     render: (h, params) => {
                         return h('div', [params.row.unitPrice, params.row.currency])
                     }
                 },
-                {title: '数量', key: 'symbolCount',
+                {title: vm.$t('common.sl'), key: 'symbolCount',
                     render: (h, params) => {
                         return h('div', [params.row.symbolCount, params.row.symbol])
                     }
                 },
 
-                {title: '金额', key: 'currencyCount',
+                {title: vm.$t('common.je'), key: 'currencyCount',
                     render: (h, params) => {
                         return h('div', [params.row.currencyCount, params.row.currency])
                     }
                 },
-                {title: '下单时间', key: 'createdTime'}
+                {title: vm.$t('otc.xdsj'), key: 'createdTime'}
             ],
             datas1: [],
             columns2: [
-                {title: '发布者', key: 'username'},
-                {title: '类型', key: 'adType', render: (h, params) => { //1：购买、2：出售
-                    return h('div', [params.row.adType === '1' ? '购买' : '出售']);
+                {title: vm.$t('otc.fbz'), key: 'username'},
+                {title: vm.$t('finance.lx'), key: 'adType', render: (h, params) => { //1：购买、2：出售
+                    return h('div', [params.row.adType === '1' ? vm.$t('otc.gm') : vm.$t('otc.cs')]);
                 }},
-                {title: '币种', key: 'symbol', render: (h, params) => {
+                {title: vm.$t('common.bz'), key: 'symbol', render: (h, params) => {
                     var row = params.row;
                     return h('div', [row.symbol === 1 ? row.currency : row.symbol]);
                 }},
-                {title: '总数量', key: 'symbolCount',
+                {title: vm.$t('otc.zsl'), key: 'symbolCount',
                     render: (h, params) => {
                         return h('div', [params.row.symbolCount, params.row.symbol])
                     }
                 },
-                {title: '余额', key: 'remainCount',
+                {title: vm.$t('otc.ye'), key: 'remainCount',
                     render: (h, params) => {
                         return h('div', [params.row.remainCount, params.row.symbol])
                     }
                 },
-                {title: '溢价', key: 'priceRate',
+                {title: vm.$t('otc.yj'), key: 'priceRate',
                     render: (h, params) => {
                         return h('div', [params.row.priceRate, '%'])
                     }
                 },
-                {title: '最高(低)接受价', key: 'acceptPrice',
+                {title: vm.$t('otc.zgdjsj'), key: 'acceptPrice',
                     render: (h, params) => {
                         return h('div', [params.row.acceptPrice, params.row.currency])
                     }
                 },
-                {title: '限额', key: 'minAmount', render: (h, params) => {
+                {title: vm.$t('otc.xe'), key: 'minAmount', render: (h, params) => {
                     return h('div', [params.row.minAmount, params.row.currency, ' - ', params.row.maxAmount, params.row.currency]);
                 }},
-                {title: '发布时间', key: 'createdAt'}
+                {title: vm.$t('operation.fbsj'), key: 'createdAt'}
             ],
             datas2: [],
             exchangeTotal: null,
@@ -108,13 +111,13 @@ export default {
         switchStaus(state, payState) {
             switch(state){
                 case 1:
-                    return payState === 1 ? '已付款' : '未付款'
+                    return payState === 1 ? this.vm.$t('otc.yfk') : this.vm.$t('otc.wfk')
                     break;
                 case 2:
-                    return '已完成'
+                    return this.vm.$t('common.ywc')
                     break;
                 case 3:
-                    return '已取消'
+                    return this.vm.$t('common.yqx')
                     break;
             }
         },

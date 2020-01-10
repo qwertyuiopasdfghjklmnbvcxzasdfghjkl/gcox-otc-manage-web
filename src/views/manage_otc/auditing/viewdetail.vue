@@ -62,7 +62,7 @@ export default {
                 },
                 {title: vm.$t('otc.jysx'), key: 'payApplyTime',
                     render: (h, params) => {
-                        return h('div', [params.row.payApplyTime, '分钟'])
+                        return h('div', [params.row.payApplyTime, vm.$t('system.fz')])
                     }
                 },
                 {title: vm.$t('common.cz'), key: 'action', render: (h, params) => {

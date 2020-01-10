@@ -1,7 +1,7 @@
 <template>
     <Card style="width:500px;">
         <p slot="title">
-            {{vm.$t('otc.gyhfsxx').format(this.username)}}
+             {{vm.$t('otc.gyhfsxx')}} {{username}}
             <i class="ivu-icon ivu-icon-close" style="float:right;cursor:pointer;" @click="closeDialog"></i>
         </p>
         <Form ref="formItem" :model="formItem" :rules="ruleItem" style="margin:0 20px;">
@@ -29,7 +29,7 @@
                 },
                 ruleItem: {
                     msg: [
-                        {required: true, message: this.vm.$t('kyc.qsrxtxx')}
+                        {required: true, message: vm.$t('kyc.qsrxtxx')}
                     ]
                 }
             };

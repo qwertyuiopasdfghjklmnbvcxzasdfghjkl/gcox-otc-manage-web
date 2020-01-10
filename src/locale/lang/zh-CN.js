@@ -1313,7 +1313,7 @@ export const otc = {
     jccg: '解除成功',
     fj: '封禁',
     jcfj: '解除封禁',
-    xxddd: '{0}的订单',
+    xxddd: "的订单",
     ddjg: '订单价格',
     jyz: '交易中',
     ssr: '申诉人',
@@ -1330,7 +1330,7 @@ export const otc = {
     jysx: '交易限时',
     ltjl: '聊天记录',
     zwltjl: '暂无聊天记录',
-    xxdzcxx: '{0}的资产信息',
+    xxdzcxx: '的资产信息',
     dqzgz: '当前总估值',
     ze: '总额',
     jfsj: '封禁时间',
@@ -1345,7 +1345,17 @@ export const otc = {
     gj: '国家',
     zjid: '证件ID',
     yhkzf: '银行卡支付',
-    gyhfsxx: '给用户{0}发送系统消息'
+    gyhfsxx: '给用户发送系统消息:',
+
+    bty: '不同意',
+    gyhywc: '该用户已完成交易：',
+    hpl: '好评率：',
+    ddxx: '订单信息',
+    ggxx: '广告信息',
+    gm: '购买',
+    cs: '出售',
+    dj: '单价',
+    xdsj: '下单时间'
 };
 export const rank = {
     jb: '级别',
