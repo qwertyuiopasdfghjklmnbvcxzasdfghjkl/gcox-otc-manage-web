@@ -18,7 +18,7 @@
         </p>
         <p>
             <span>{{vm.$t('finance.ffsl')}}</span>
-            <span><InputNumber v-model="amount" :min="0.001" style="width: 300px"/></span>
+            <span><InputNumber v-model="amount" :min="0.001" :max="99999999" :step="0.001" style="width: 300px"></InputNumber></span>
         </p>
         <p style="justify-content: center">
             <Button type="primary" @click="submit()">{{vm.$t('common.bc')}}</Button>
