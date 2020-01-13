@@ -40,7 +40,7 @@
                 data: [],
                 columns: [
                     {title: vm.$t('common.cjsj'), key: 'createAt'},
-                    {title: vm.$t('common.yhm'), key: 'username'},
+                    {title: vm.$t('common.dz'), key: 'toAddress'},
                     {title: vm.$t('common.bzdh'), key: 'symbol'},
                     {title: vm.$t('common.sl'), key: 'amount'},
                     {title: 'Txid', key: 'txId'},
