@@ -116,7 +116,7 @@
                 util.setDialog(list);
             },
             outExl () {
-                util.outExl('api/bm/minerFee/distribute/exportMinerDistributeExce', this.outData);
+                util.outExl('api/bm/minerFee/distribute/exportMinerDistributeExcel', this.outData);
             },
         }
     };

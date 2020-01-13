@@ -472,7 +472,7 @@ otc.distributeFee = distributeFee;
 
 // 分发记录展示
 const selectDistributeRecordList = function (data, success, error) {
-    api.post(`minerFee/distribute/selectDistributeRecordList/${data.size}/${data.page}`, data, (res) => {
+    api.post(`api/bm/minerFee/distribute/selectDistributeRecordList/${data.size}/${data.page}?address=${data.address}`, (res) => {
         if (res.rst === 1) {
             success && success(res.data);
         } else {
