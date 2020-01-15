@@ -8,6 +8,7 @@ import {
     appRouter,
     kycRouter,
     otcRouter,
+    benchmarkRouter,
     exchangeRouter,
     communityRouter,
     voteRouter,
@@ -81,15 +82,6 @@ Vue.locale = () => {};
 const navLang = navigator.language;
 const localLang = (navLang === 'zh-CN' || navLang === 'en-US') ? navLang : false;
 const lang = window.localStorage.getItem('language') || localLang || 'zh-CN';
-
-// Vue.config.lang = lang;
-
-// 多语言配置
-// const locales = Locales;
-// const mergeZH = Object.assign(zhLocale, locales['zh-CN']);
-// const mergeEN = Object.assign(enLocale, locales['en-US']);
-// Vue.locale('zh-CN', mergeZH);
-// Vue.locale('en-US', mergeEN);
 
 const messages = {
     'en-US': Object.assign(require('./locale/lang/en-US'), enLocale),
@@ -304,6 +296,7 @@ window.vm = new Vue({
         routers = routers.concat(appRouter);
         routers = routers.concat(kycRouter);
         routers = routers.concat(otcRouter);
+        routers = routers.concat(benchmarkRouter);
         routers = routers.concat(exchangeRouter);
         routers = routers.concat(communityRouter);
         routers = routers.concat(voteRouter);

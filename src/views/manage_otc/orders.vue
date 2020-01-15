@@ -1,7 +1,7 @@
 <!-- 订单管理 -->
 <template>
     <Card>
-        <p slot="title">{{$t('otc.ddgl')}}
+        <p slot="title">{{$t('nav.ddgl')}}
             <span class="refresh" @click="getOrdersList"></span>
         </p>
         <Row>

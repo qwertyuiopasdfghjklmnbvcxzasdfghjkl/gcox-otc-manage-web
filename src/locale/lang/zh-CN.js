@@ -1368,3 +1368,16 @@ export const rank = {
     zxjyl: '最小交易量',
     zk: '折扣'
 };
+export const benchmark = {
+    otcjzjgl: 'OTC基准价管理',
+    fbhllq: '法币汇率拉取',
+    jysjzj: '交易所基准价',
+    jzjys: '基准交易所',
+    bdfb: '标的法币',
+    jzfb: '基准法币',
+    hl: '汇率',
+    zxgxsj: '最新更新时间',
+    ddsj: '等待时间',
+    jysid: '交易所ID',
+    jzjysmc: '基准交易所名称',
+}

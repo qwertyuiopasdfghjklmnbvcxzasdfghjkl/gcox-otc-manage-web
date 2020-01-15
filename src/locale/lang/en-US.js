@@ -1264,3 +1264,16 @@ export const rank = {
     zxjyl: 'Minimum transaction volume',
     zk: 'discount'
 }
+export const benchmark = {
+    otcjzjgl: 'OTC benchmark price management',
+    fbhllq: 'Fiat currency exchange rate pull',
+    jysjzj: 'Exchange reference price',
+    jzjys: 'Benchmark exchange',
+    bdfb: 'The underlying legal tender',
+    jzfb: 'Benchmark fiat',
+    hl: 'The exchange rate',
+    zxgxsj: 'Latest update time',
+    ddsj: 'Waiting time',
+    jysid: 'Exchange ID',
+    jzjysmc: 'Benchmark exchange name',
+}

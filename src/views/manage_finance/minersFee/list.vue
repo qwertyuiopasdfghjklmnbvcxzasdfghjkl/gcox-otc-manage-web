@@ -46,7 +46,7 @@
                     {title: 'Txid', key: 'txId'},
                     {
                         title: vm.$t('common.zt'), render: (h, pamars) => {
-                            return h('div',{}, this.states(pamars.row.status));
+                            return h('div', {}, this.states(pamars.row.status));
                         }
                     },
                     {title: vm.$t('finance.czr'), key: 'adminName'}
@@ -55,15 +55,17 @@
             };
         },
         created () {
-            // this.getList();
+            this.getList();
         },
         methods: {
             getList () {
                 let data = {
                     size: this.size,
                     page: this.page,
-                    address: this.form.address
                 };
+                if (this.form.address) {
+                    data.address = 'address=' + this.form.address;
+                }
                 this.outData = data;
                 otcApi.selectDistributeRecordList(data, (res, total) => {
                     this.data = res;
@@ -91,8 +93,8 @@
                     6: this.vm.$t('monitoring.dzwc'),
                     7: this.vm.$t('finance.txsbzjfh'),
                 };
-                console.log(i)
-                return data[i]
+                console.log(i);
+                return data[i];
             }
         }
     };

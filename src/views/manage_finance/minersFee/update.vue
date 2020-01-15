@@ -18,7 +18,9 @@
         </p>
         <p>
             <span>{{vm.$t('finance.ffsl')}}</span>
-            <span><InputNumber v-model="amount" :min="0.001" :max="99999999" :step="0.001" style="width: 300px"></InputNumber></span>
+            <span>
+                <numberbox v-model="amount" :accuracy="8"/>
+            </span>
         </p>
         <p style="justify-content: center">
             <Button type="primary" @click="submit()">{{vm.$t('common.bc')}}</Button>
@@ -28,8 +30,10 @@
 
 <script>
     import otcApi from '../../../api/otc';
+    import Numberbox from '../../components/dialog/numberbox';
 
     export default {
+        components: {Numberbox},
         props: ['item'],
         data () {
             let vm = window.vm;
