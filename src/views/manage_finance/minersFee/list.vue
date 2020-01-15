@@ -74,7 +74,11 @@
                 });
             },
             outExl () {
-                util.outExl('api/bm/minerFee/distribute/exportDistributeRecordExcel', this.outData);
+                let data = {}
+                if (this.form.address) {
+                    data.address = this.form.address;
+                }
+                util.outExl('api/bm/minerFee/distribute/exportDistributeRecordExcel', data);
             },
             changePage (e) {
                 this.page = e;
