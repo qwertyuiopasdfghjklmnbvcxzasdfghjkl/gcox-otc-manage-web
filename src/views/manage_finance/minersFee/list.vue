@@ -93,7 +93,7 @@
                     2: this.vm.$t('finance.ddjyfq'),
                     3: this.vm.$t('finance.jyyfs'),
                     4: this.vm.$t('finance.cx'),
-                    5: this.vm.$t('finance.txsb'),
+                    5: this.vm.$t('ieo.sb'),
                     6: this.vm.$t('monitoring.dzwc'),
                     7: this.vm.$t('finance.txsbzjfh'),
                 };
