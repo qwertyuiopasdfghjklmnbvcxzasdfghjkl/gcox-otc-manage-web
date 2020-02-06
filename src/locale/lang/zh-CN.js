@@ -1066,7 +1066,9 @@ export const nav = {
     fjgz: '分级规则',
     usdtcz: 'USDT充值',
     kgfff: '矿工费分发',
-    khhgl: '开户行管理'
+    khhgl: '开户行管理',
+    tjzbgl: '统计指标管理',
+    lsshcx: '历史数据查询'
 };
 export const home = {
     zyh: '总用户',
@@ -1079,7 +1081,16 @@ export const report = {
     tjbbgl: '统计报表管理',
     wjm: '文件名',
     xz: '下载',
-    mrbb: '每日报表'
+    mrbb: '每日报表',
+    tjzb: '统计指标',
+    tjz: '统计值',
+    sfpc: '是否排除',
+    pc: '排除',
+    bpc: '不排除',
+    zbms: '指标描述',
+    csy: '参数1',
+    sfpctszh: '是否排除特殊用户',
+    px: '排序'
 };
 export const mall = {
     ddid: '订单ID',

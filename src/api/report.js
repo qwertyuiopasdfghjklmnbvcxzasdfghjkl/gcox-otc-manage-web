@@ -10,7 +10,42 @@ let report = {
                 error && error(res.msg);
             }
         }, error);
-    }
+    },
+
+    // 历史数据查询
+    selectDailyExportData (data, success, error) {
+        api.post(`api/bm/otcManage/selectDailyExportData/${data.size}/${data.page}`, data, (res) => {
+            if (res.rst === 1) {
+                success && success(res.data, res.total);
+            } else {
+                error && error(res.msg);
+            }
+        }, error);
+    },
+
+    // 统计指标管理
+    selectDailyStatistic (data, success, error) {
+        api.post(`api/bm/otcManage/selectDailyStatistic/${data.size}/${data.page}`, data, (res) => {
+            if (res.rst === 1) {
+                success && success(res.data, res.total);
+            } else {
+                error && error(res.msg);
+            }
+        }, error);
+    },
+
+    // 新增/修改统计指标管理
+    insertOrUpdateDailyStatistic (data, success, error) {
+        api.post(`api/bm/otcManage/insertOrUpdateDailyStatistic`, data, (res) => {
+            if (res.rst === 1) {
+                success && success(res);
+            } else {
+                error && error(res.msg);
+            }
+        }, error);
+    },
+
+
 };
 
 export default report;

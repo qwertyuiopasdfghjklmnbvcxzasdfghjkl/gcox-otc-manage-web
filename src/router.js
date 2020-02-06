@@ -1485,6 +1485,40 @@ export const reportRouter = [
                 }
             }
         ]
+    },
+     {
+        path: '/report_history',
+        name: 'report_history',
+        title: 'nav.lsshcx',
+        component: Main,
+        icon: 'archive',
+        meta: {
+            roles: ['ROLE_ADMIN', 'ROLE_CUSTOMER', 'ROLE_OPERATION'],
+        },
+        children: [
+            {
+                path: 'report_history_index', title: 'nav.mrbb', name: 'report_history_index', component: resolve => {
+                    require(['./views/manage_report/history.vue'], resolve);
+                }
+            }
+        ]
+    },
+     {
+        path: '/report_statistics',
+        name: 'report_statistics',
+        title: 'nav.tjzbgl',
+        component: Main,
+        icon: 'archive',
+        meta: {
+            roles: ['ROLE_ADMIN', 'ROLE_CUSTOMER', 'ROLE_OPERATION'],
+        },
+        children: [
+            {
+                path: 'report_statistics_index', title: 'nav.mrbb', name: 'report_statistics_index', component: resolve => {
+                    require(['./views/manage_report/statistics.vue'], resolve);
+                }
+            }
+        ]
     }
 ];
 
