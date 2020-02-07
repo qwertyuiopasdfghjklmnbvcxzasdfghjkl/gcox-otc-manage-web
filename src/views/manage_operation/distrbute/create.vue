@@ -59,28 +59,28 @@
                 },
                 ruleValidate: {
                     serialNumber: [
-                        {required: true, message: '请输入编号', trigger: 'blur'}
+                        {required: true, message: vm.$t('common.qsr')+vm.$t('operation.bh'), trigger: 'blur'}
                     ],
                     creatTime: [
                         {required: true, type: 'date', message: '请输入时间', trigger: 'change'}
                     ],
                     symbol: [
-                        {required: true, message: '请输入币种', trigger: 'blur'}
+                        {required: true, message: vm.$t('common.qsr')+vm.$t('common.bz'), trigger: 'blur'}
                     ],
                     quantity: [
-                        {required: true, message: '请输入数量', trigger: 'blur'}
+                        {required: true, message: vm.$t('common.qsr')+vm.$t('common.sl'), trigger: 'blur'}
                     ],
                     username: [
-                        {required: true, message: '请输入目标用户名', trigger: 'blur'}
+                        {required: true, message: vm.$t('common.qsr')+vm.$t('operation.mbyhid'), trigger: 'blur'}
                     ],
                     // accountId: [
                     //     { required: true, message: '请输入目标账户ID', trigger: 'blur' }
                     // ],
                     sourceUsername: [
-                        {required: true, message: '请输入来源账户名', trigger: 'blur'}
+                        {required: true, message: vm.$t('common.qsr')+vm.$t('operation.lyzhid'), trigger: 'blur'}
                     ],
                     remarks: [
-                        {required: true, message: '请输入备注', trigger: 'blur'}
+                        {required: true, message: vm.$t('common.qsr')+vm.$t('common.beiz'), trigger: 'blur'}
                     ],
                 },
                 symbolData: []

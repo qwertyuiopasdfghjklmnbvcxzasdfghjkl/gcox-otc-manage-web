@@ -31,6 +31,7 @@
     import {
         kycRouter,
         otcRouter,
+        benchmarkRouter,
         exchangeRouter,
         communityRouter,
         voteRouter,
@@ -64,9 +65,15 @@
                 datas: [
                     // {id: 'kyc', path: 'kycauditing_index', name: this.$t('nav.kycsh'), menus: kycRouter},
                     {id: 'otc', path: 'otc_data_statistics_index', name: this.$t('nav.otcgl'), menus: otcRouter},
-                    {id: 'exchange', path: 'exchange_data_statistics_index', name: this.$t('nav.bbgl'), menus: exchangeRouter},
-                    { name: this.$t('nav.yhjbgl'), menus: rankRouter},
-                    { name: this.$t('nav.yqgl'), menus: inviteRouter},
+                    {path: 'otc_data_statistics_index', name: this.$t('benchmark.otcjzjgl'), menus: benchmarkRouter},
+                    {
+                        id: 'exchange',
+                        path: 'exchange_data_statistics_index',
+                        name: this.$t('nav.bbgl'),
+                        menus: exchangeRouter
+                    },
+                    {name: this.$t('nav.yhjbgl'), menus: rankRouter},
+                    {name: this.$t('nav.yqgl'), menus: inviteRouter},
                     // { name: this.$t('nav.scgl'), menus: lockRouter},
                     // { name: this.$t('nav.ieogl'), menus: ieoRouter},
                     // {id: 'community', path: 'community_data_index', name: '社区管理', menus: communityRouter},
@@ -74,10 +81,20 @@
                     {id: 'finance', path: 'finance_finance_index', name: this.$t('nav.cwgl'), menus: financeRouter},
                     // {id: 'mall', path: 'mall_index', name: this.$t('nav.scddgl'), menus: mallRouter},
                     {id: 'risk', path: 'risk_exchange_index', name: this.$t('nav.fxkzgl'), menus: riskRouter},
-                    {id: 'operation', path: 'operation_distribute_index', name: this.$t('nav.ywtggl'), menus: operationRouter},
+                    {
+                        id: 'operation',
+                        path: 'operation_distribute_index',
+                        name: this.$t('nav.ywtggl'),
+                        menus: operationRouter
+                    },
                     {name: this.$t('report.tjbbgl'), menus: reportRouter},
                     {id: 'admin', path: 'admin_index', name: this.$t('nav.glyxtqx'), menus: adminRouter},
-                    {id: 'systemconfig', path: 'systemconfig_index', name: this.$t('nav.xtcs'), menus: systemConfigRouter},
+                    {
+                        id: 'systemconfig',
+                        path: 'systemconfig_index',
+                        name: this.$t('nav.xtcs'),
+                        menus: systemConfigRouter
+                    },
                     {id: 'systemcogs', path: 'systemlogs_index', name: this.$t('nav.xtrz'), menus: systemLogsRouter},
                     {id: 'monitoring', path: 'monitoring_index', name: this.$t('nav.jkpt'), menus: monitoringRouter},
                     {id: 'fund', path: 'fund_index', name: this.$t('nav.ptzjgl'), menus: fundRouter}

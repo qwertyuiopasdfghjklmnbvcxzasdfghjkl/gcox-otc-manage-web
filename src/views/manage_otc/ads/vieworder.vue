@@ -1,7 +1,7 @@
 <template>
     <Card style="width:1000px;">
         <p slot="title">
-            {{vm.$t('otc.xxddd').format(this.username)}}
+            {{userName}} {{vm.$t('otc.xxddd')}}
             <i class="ivu-icon ivu-icon-close" style="float:right;cursor:pointer;" @click="closeDialog"></i>
         </p>
         <Table :columns="columns1" :data="data1"></Table>
@@ -22,6 +22,7 @@
                 vm: vm,
                 curPage: 1,
                 total: 0,
+                userName: this.username,
                 columns1: [
                     {title: vm.$t('risk.ddh'), key: 'orderNumber'},
                     {

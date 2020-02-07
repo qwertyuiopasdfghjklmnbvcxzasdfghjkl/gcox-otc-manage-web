@@ -1066,7 +1066,9 @@ export const nav = {
     fjgz: '分级规则',
     usdtcz: 'USDT充值',
     kgfff: '矿工费分发',
-    khhgl: '开户行管理'
+    khhgl: '开户行管理',
+    tjzbgl: '统计指标管理',
+    lsshcx: '历史数据查询'
 };
 export const home = {
     zyh: '总用户',
@@ -1079,7 +1081,16 @@ export const report = {
     tjbbgl: '统计报表管理',
     wjm: '文件名',
     xz: '下载',
-    mrbb: '每日报表'
+    mrbb: '每日报表',
+    tjzb: '统计指标',
+    tjz: '统计值',
+    sfpc: '是否排除',
+    pc: '排除',
+    bpc: '不排除',
+    zbms: '指标描述',
+    csy: '参数1',
+    sfpctszh: '是否排除特殊用户',
+    px: '排序'
 };
 export const mall = {
     ddid: '订单ID',
@@ -1313,7 +1324,7 @@ export const otc = {
     jccg: '解除成功',
     fj: '封禁',
     jcfj: '解除封禁',
-    xxddd: '{0}的订单',
+    xxddd: "的订单",
     ddjg: '订单价格',
     jyz: '交易中',
     ssr: '申诉人',
@@ -1330,7 +1341,7 @@ export const otc = {
     jysx: '交易限时',
     ltjl: '聊天记录',
     zwltjl: '暂无聊天记录',
-    xxdzcxx: '{0}的资产信息',
+    xxdzcxx: '的资产信息',
     dqzgz: '当前总估值',
     ze: '总额',
     jfsj: '封禁时间',
@@ -1345,7 +1356,17 @@ export const otc = {
     gj: '国家',
     zjid: '证件ID',
     yhkzf: '银行卡支付',
-    gyhfsxx: '给用户{0}发送系统消息'
+    gyhfsxx: '给用户发送系统消息:',
+
+    bty: '不同意',
+    gyhywc: '该用户已完成交易：',
+    hpl: '好评率：',
+    ddxx: '订单信息',
+    ggxx: '广告信息',
+    gm: '购买',
+    cs: '出售',
+    dj: '单价',
+    xdsj: '下单时间'
 };
 export const rank = {
     jb: '级别',
@@ -1358,3 +1379,16 @@ export const rank = {
     zxjyl: '最小交易量',
     zk: '折扣'
 };
+export const benchmark = {
+    otcjzjgl: 'OTC基准价管理',
+    fbhllq: '法币汇率拉取',
+    jysjzj: '交易所基准价',
+    jzjys: '基准交易所',
+    bdfb: '标的法币',
+    jzfb: '基准法币',
+    hl: '汇率',
+    zxgxsj: '最新更新时间',
+    ddsj: '等待时间',
+    jysid: '交易所ID',
+    jzjysmc: '基准交易所名称',
+}

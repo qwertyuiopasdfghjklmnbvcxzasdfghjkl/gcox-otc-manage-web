@@ -3,25 +3,6 @@
     <Row>
         <Col span="24">
             <Row>
-                <!--<Card>-->
-                <!---->
-                <!--<Row>-->
-                <!--<Col span="12">-->
-                <!--<p>自动审核</p>-->
-                <!--<p>-->
-                <!--<span>待审核笔数：{{numberData.toBeAuditingAutoCount }}</span>-->
-                <!--<span style="margin-left:40px;">已审核笔数：{{numberData.auditingFinishAutoCount }}</span>-->
-                <!--</p>-->
-                <!--</Col>-->
-                <!--<Col span="12">-->
-                <!--<p>人工审核</p>-->
-                <!--<p>-->
-                <!--<span>待审核笔数：{{numberData.toBeAuditingManualCount}}</span>-->
-                <!--<span style="margin-left:40px;">已审核笔数：{{numberData.auditingFinishManualCount}}</span>-->
-                <!--</p>-->
-                <!--</Col>-->
-                <!--</Row>-->
-                <!--</Card>-->
                 <Card style="margin-top:10px;">
                     <p slot="title">{{$t('finance.tbsh')}}
                         <span class="refresh" @click="reshAll"></span>

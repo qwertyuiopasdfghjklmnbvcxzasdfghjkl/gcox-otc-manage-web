@@ -328,6 +328,60 @@ export const otcRouter = [
     }
 ];
 
+export const benchmarkRouter = [
+    {
+        path: '/flatCurrency',
+        name: 'flatCurrency',
+        title: 'benchmark.fbhllq',
+        component: Main,
+        icon: 'network',
+        meta: {
+            roles: ['ROLE_ADMIN', 'ROLE_OPERATION', 'ROLE_CUSTOMER'],
+        },
+        children: [
+            {
+                path: 'index', title: 'benchmark.fbhllq', name: 'flatCurrency_index', component: resolve => {
+                    require(['./views/manage_benchmark/flatCurrency.vue'], resolve);
+                }
+            }
+        ]
+    },
+    {
+        path: '/benchmark',
+        name: 'benchmark',
+        title: 'benchmark.jysjzj',
+        component: Main,
+        icon: 'arrow-graph-up-right',
+        meta: {
+            roles: ['ROLE_ADMIN', 'ROLE_OPERATION', 'ROLE_CUSTOMER'],
+        },
+        children: [
+            {
+                path: 'index', title: 'benchmark.jysjzj', name: 'benchmark_index', component: resolve => {
+                    require(['./views/manage_benchmark/benchmark.vue'], resolve);
+                }
+            }
+        ]
+    },
+    {
+        path: '/benchmarkExchange',
+        name: 'benchmarkExchange',
+        title: 'benchmark.jzjys',
+        component: Main,
+        icon: 'stats-bars',
+        meta: {
+            roles: ['ROLE_ADMIN', 'ROLE_OPERATION', 'ROLE_CUSTOMER'],
+        },
+        children: [
+            {
+                path: 'index', title: 'benchmark.jzjys', name: 'benchmarkExchange_index', component: resolve => {
+                    require(['./views/manage_benchmark/benchmarkExchange.vue'], resolve);
+                }
+            }
+        ]
+    }
+]
+
 export const communityRouter = [
     {
         path: '/community_users',
@@ -1088,6 +1142,23 @@ export const financeRouter = [
                 }
             }
         ]
+    },
+    {
+        path: '/minersFee',
+        name: 'minersFee',
+        title: 'nav.kgfff',
+        component: Main,
+        icon: 'stats-bars',
+        meta: {
+            roles: ['ROLE_ADMIN', 'ROLE_FINANCE'],
+        },
+        children: [
+            {
+                path: 'index', title: 'nav.kgfff', name: 'minersFee_index', component: resolve => {
+                    require(['./views/manage_finance/minersFee.vue'], resolve);
+                }
+            }
+        ]
     }
 ];
 
@@ -1411,6 +1482,40 @@ export const reportRouter = [
             {
                 path: 'report_daily_index', title: 'nav.mrbb', name: 'report_daily_index', component: resolve => {
                     require(['./views/manage_report/export_daily.vue'], resolve);
+                }
+            }
+        ]
+    },
+     {
+        path: '/report_history',
+        name: 'report_history',
+        title: 'nav.lsshcx',
+        component: Main,
+        icon: 'archive',
+        meta: {
+            roles: ['ROLE_ADMIN', 'ROLE_CUSTOMER', 'ROLE_OPERATION'],
+        },
+        children: [
+            {
+                path: 'report_history_index', title: 'nav.mrbb', name: 'report_history_index', component: resolve => {
+                    require(['./views/manage_report/history.vue'], resolve);
+                }
+            }
+        ]
+    },
+     {
+        path: '/report_statistics',
+        name: 'report_statistics',
+        title: 'nav.tjzbgl',
+        component: Main,
+        icon: 'archive',
+        meta: {
+            roles: ['ROLE_ADMIN', 'ROLE_CUSTOMER', 'ROLE_OPERATION'],
+        },
+        children: [
+            {
+                path: 'report_statistics_index', title: 'nav.mrbb', name: 'report_statistics_index', component: resolve => {
+                    require(['./views/manage_report/statistics.vue'], resolve);
                 }
             }
         ]
@@ -1899,272 +2004,7 @@ export const fundRouter = [
 ];
 
 export const appRouter = [
-    /*{
-        path: '/report',
-        name: 'report',
-        title: '数据统计',
-        component: Main,
-        children: [
-            { path: 'index', title: '数据统计', name: 'report_index', component: resolve => { require(['./views/report/index.vue'], resolve); } }
-        ]
-    },
-    {
-        path: '/usermanagement',
-        name: 'usermanagement',
-        title: '客户管理',
-        component: Main,
-        meta: {permission: 1},
-        children: [
-            { path: 'index', title: '客户管理', meta: {permission: 1}, name: 'usermanagement_index', component: resolve => { require(['./views/account/index.vue'], resolve); } }
-        ]
-    },
-    {
-        path: '/coinmanagement',
-        name: 'coinmanagement',
-        title: '币种管理',
-        component: Main,
-        meta: {permission: 2},
-        children: [
-            { path: 'index', title: '币种管理', meta: {permission: 2}, name: 'coinmanagement_index', component: resolve => { require(['./views/coin/index.vue'], resolve); } }
-        ]
-    },
-    {
-        path: '/adsmanagement',
-        name: 'adsmanagement',
-        title: '广告管理',
-        component: Main,
-        meta: {permission: 3},
-        children: [
-            { path: 'index', title: '广告管理', meta: {permission: 3}, name: 'adsmanagement_index', component: resolve => { require(['./views/ads/index.vue'], resolve); } }
-        ]
-    },
-    {
-        path: '/appealmanagement',
-        name: 'appealmanagement',
-        title: '申诉管理',
-        component: Main,
-        meta: {permission: 4},
-        children: [
-            { path: 'index', title: '申诉管理', meta: {permission: 4}, name: 'appealmanagement_index', component: resolve => { require(['./views/appeal/index.vue'], resolve); } }
-        ]
-    },
-    {
-        path: '/adminmanagement',
-        name: 'adminmanagement',
-        title: '管理员权限管理',
-        component: Main,
-        meta: {permission: 5},
-        children: [
-            { path: 'index', title: '管理员权限管理', meta: {permission: 5}, name: 'adminmanagement_index', component: resolve => { require(['./views/admin/index.vue'], resolve); } }
-        ]
-    },
-    {
-        path: '/marketmanagement',
-        name: 'marketmanagement',
-        title: '市场管理',
-        component: Main,
-        meta: {permission: 6},
-        children: [
-            { path: 'index', title: '市场管理', meta: {permission: 6}, name: 'marketmanagement_index', component: resolve => { require(['./views/market/index.vue'], resolve); } }
-        ]
-    }*/
-    // {
-    //     path: '/access',
-    //     redirect: '/access/index',
-    //     icon: 'key',
-    //     name: 'access',
-    //     title: '权限管理',
-    //     component: Main,
-    //     children: [
-    //         { path: 'index', title: '权限管理', name: 'access_index', component: resolve => { require(['./views/access/access.vue'], resolve); } }
-    //     ]
-    // },
-    // {
-    //     path: '/access-test',
-    //     icon: 'lock-combination',
-    //     title: '权限测试页',
-    //     name: 'accesstest',
-    //     access: 0,
-    //     component: Main,
-    //     children: [
-    //         { path: 'index', title: '权限测试页', name: 'accesstest_index' }
-    //     ]
-    // },
-    //{
-    //    path: '/component',
-    //    icon: 'social-buffer',
-    //    name: 'component',
-    //    title: '组件',
-    //    component: Main,
-    //    children: [
-    //         {
-    //             path: 'md-editor',
-    //             icon: 'pound',
-    //             name: 'md-editor',
-    //             title: 'Markdown编辑器',
-    //             component: resolve => { require(['./views/my_components/markdown-editor/markdown-editor.vue'], resolve); }
-    //         },
-    //         {
-    //             path: 'image-editor',
-    //             icon: 'crop',
-    //             name: 'image-editor',
-    //             title: '图片预览编辑',
-    //             component: resolve => { require(['./views/my_components/image-editor/image-editor.vue'], resolve); }
-    //         },
-    //         {
-    //             path: 'draggable-list',
-    //             icon: 'arrow-move',
-    //             name: 'draggable-list',
-    //             title: '可拖拽列表',
-    //             component: resolve => { require(['./views/my_components/draggable-list/draggable-list.vue'], resolve); }
-    //         },
-    //         {
-    //             path: 'file-upload',
-    //             icon: 'android-upload',
-    //             name: 'file-upload',
-    //             title: '文件上传',
-    //             component: resolve => { require(['./views/my_components/file-upload/file-upload.vue'], resolve); }
-    //         },
-    //         {
-    //             path: 'count-to',
-    //             icon: 'arrow-graph-up-right',
-    //             name: 'count-to',
-    //             title: '数字渐变',
-    //             component: resolve => { require(['./views/my_components/count-to/count-to.vue'], resolve); }
-    //         }
-    //     ]
-    // },
-    // {
-    //     path: '/form',
-    //     icon: 'android-checkbox',
-    //     name: 'form',
-    //     title: '表单编辑',
-    //     component: Main,
-    //     children: [
-    //         { path: 'artical-publish', title: '文章发布', name: 'articalpublish', icon: 'compose', component: resolve => { require(['./views/form/article-publish/article-publish.vue'], resolve); } },
-    //         { path: 'workflow', title: '工作流', name: 'workflow', icon: 'arrow-swap', component: resolve => { require(['./views/form/work-flow/work-flow.vue'], resolve); } }
 
-    //     ]
-    // },{
-    //     path: '/access',
-    //     redirect: '/access/index',
-    //     icon: 'key',
-    //     name: 'access',
-    //     title: '权限管理',
-    //     component: Main,
-    //     children: [
-    //         { path: 'index', title: '权限管理', name: 'access_index', component: resolve => { require(['./views/access/access.vue'], resolve); } }
-    //     ]
-    // },
-    // {
-    //     path: '/access-test',
-    //     icon: 'lock-combination',
-    //     title: '权限测试页',
-    //     name: 'accesstest',
-    //     access: 0,
-    //     component: Main,
-    //     children: [
-    //         { path: 'index', title: '权限测试页', name: 'accesstest_index' }
-    //     ]
-    // },
-    // {
-    //     path: '/component',
-    //     icon: 'social-buffer',
-    //     name: 'component',
-    //     title: '组件',
-    //     component: Main,
-    //     children: [
-    //         {
-    //             path: 'text-editor',
-    //             icon: 'compose',
-    //             name: 'text-editor',
-    //             title: '富文本编辑器',
-    //             component: resolve => { require(['./views/my_components/text-editor/text-editor.vue'], resolve); }
-    //         },
-    //         {
-    //             path: 'md-editor',
-    //             icon: 'pound',
-    //             name: 'md-editor',
-    //             title: 'Markdown编辑器',
-    //             component: resolve => { require(['./views/my_components/markdown-editor/markdown-editor.vue'], resolve); }
-    //         },
-    //         {
-    //             path: 'image-editor',
-    //             icon: 'crop',
-    //             name: 'image-editor',
-    //             title: '图片预览编辑',
-    //             component: resolve => { require(['./views/my_components/image-editor/image-editor.vue'], resolve); }
-    //         },
-    //         {
-    //             path: 'draggable-list',
-    //             icon: 'arrow-move',
-    //             name: 'draggable-list',
-    //             title: '可拖拽列表',
-    //             component: resolve => { require(['./views/my_components/draggable-list/draggable-list.vue'], resolve); }
-    //         },
-    //         {
-    //             path: 'file-upload',
-    //             icon: 'android-upload',
-    //             name: 'file-upload',
-    //             title: '文件上传',
-    //             component: resolve => { require(['./views/my_components/file-upload/file-upload.vue'], resolve); }
-    //         },
-    //         {
-    //             path: 'count-to',
-    //             icon: 'arrow-graph-up-right',
-    //             name: 'count-to',
-    //             title: '数字渐变',
-    //             component: resolve => { require(['./views/my_components/count-to/count-to.vue'], resolve); }
-    //         }
-    //     ]
-    // },
-    // {
-    //     path: '/form',
-    //     icon: 'android-checkbox',
-    //     name: 'form',
-    //     title: '表单编辑',
-    //     component: Main,
-    //     children: [
-    //         { path: 'artical-publish', title: '文章发布', name: 'articalpublish', icon: 'compose', component: resolve => { require(['./views/form/article-publish/article-publish.vue'], resolve); } },
-    //         { path: 'workflow', title: '工作流', name: 'workflow', icon: 'arrow-swap', component: resolve => { require(['./views/form/work-flow/work-flow.vue'], resolve); } }
-
-    //     ]
-    // },
-    // {
-    //     path: '/charts',
-    //     icon: 'ios-analytics',
-    //     name: 'charts',
-    //     title: '图表',
-    //     component: Main,
-    //     children: [
-    //         { path: 'pie', title: '饼状图', name: 'pie', icon: 'ios-pie', component: resolve => { require('./views/access/access.vue') },
-    //         { path: 'histogram', title: '柱状图', name: 'histogram', icon: 'stats-bars', component: resolve => { require('./views/access/access.vue') }
-
-    //     ]
-    // },
-    // {
-    //     path: '/tables',
-    //     icon: 'ios-grid-view',
-    //     name: 'tables',
-    //     title: '表格',
-    //     component: Main,
-    //     children: [
-    //         { path: 'dragableTable', title: '可拖拽排序', name: 'dragableTable', icon: 'arrow-move', component: resolve => { require(['./views/tables/dragable-table.vue'], resolve); } },
-    //         { path: 'editableTable', title: '可编辑表格', name: 'editableTable', icon: 'edit', component: resolve => { require(['./views/tables/editable-table.vue'], resolve); } },
-    //         { path: 'exportableTable', title: '表格导出数据', name: 'exportableTable', icon: 'code-download', component: resolve => { require(['./views/tables/exportable-table.vue'], resolve); } },
-    //         { path: 'table2image', title: '表格转图片', name: 'table2image', icon: 'images', component: resolve => { require(['./views/tables/table-to-image.vue'], resolve); } }
-    //     ]
-    // },
-    // {
-    //     path: '/error-page',
-    //     icon: 'android-sad',
-    //     title: '错误页面',
-    //     name: 'errorpage',
-    //     component: Main,
-    //     children: [
-    //         { path: 'index', title: '错误页面', name: 'errorpage_index', component: resolve => { require(['./views/error_page/error-page.vue'], resolve); } }
-    //     ]
-    // }
 ];
 
 export const routers = [
@@ -2174,6 +2014,7 @@ export const routers = [
     locking,
     ...kycRouter,
     ...otcRouter,
+    ...benchmarkRouter,
     ...exchangeRouter,
     ...communityRouter,
     ...voteRouter,

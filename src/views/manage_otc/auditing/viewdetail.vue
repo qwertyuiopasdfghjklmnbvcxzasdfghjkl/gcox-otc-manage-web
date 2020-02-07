@@ -1,7 +1,7 @@
 <template>
-  <Card class="manage_otc_auditing_info" style="width:1000px;">
+  <Card class="manage_otc_auditing_info" style="width:1200px;">
       <p slot="title">
-          {{vm.$t('kyc.xkxq')}}
+          {{vm.$t('kyc.ckxq')}}
           <i class="ivu-icon ivu-icon-close" style="float:right;cursor:pointer;" @click="closeDialog"></i>
       </p>
       <Row class="manage_otc_auditing_info_row" type="flex">
@@ -62,7 +62,7 @@ export default {
                 },
                 {title: vm.$t('otc.jysx'), key: 'payApplyTime',
                     render: (h, params) => {
-                        return h('div', [params.row.payApplyTime, '分钟'])
+                        return h('div', [params.row.payApplyTime, vm.$t('system.fz')])
                     }
                 },
                 {title: vm.$t('common.cz'), key: 'action', render: (h, params) => {
@@ -123,5 +123,5 @@ export default {
 .manage_otc_auditing_info_row{height:60px;line-height:60px;font-size:20px;border-bottom:1px #ccc solid;}
 .manage_otc_auditing_info_row_title{width:150px;text-align:center;border-right:1px solid #ccc;}
 .manage_otc_auditing_info_row_name{width:220px;padding-left:4px;}
-.manage_otc_auditing_info_row_email{width:350px;}
+.manage_otc_auditing_info_row_email{width:450px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;display: inline-block}
 </style>

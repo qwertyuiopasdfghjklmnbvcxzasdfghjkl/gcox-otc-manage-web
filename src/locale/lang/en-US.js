@@ -1209,7 +1209,7 @@ export const otc = {
     jccg: 'Remove success',
     fj: 'banned',
     jcfj: 'Lift the ban',
-    xxddd: 'Order of the {0}',
+    xxddd: "Order",
     ddjg: 'The order price',
     jyz: 'Trading in',
     ssr: 'The plaintiff',
@@ -1226,7 +1226,7 @@ export const otc = {
     jysx: 'Trading limited',
     ltjl: 'Chat record',
     zwltjl: 'No chat record',
-    xxdzcxx: 'Asset information for {0}',
+    xxdzcxx: 'Asset information',
     dqzgz: 'Current total valuation',
     ze: 'The total amount of',
     jfsj: 'Ban time',
@@ -1241,7 +1241,17 @@ export const otc = {
     gj: 'countries',
     zjid: 'ID ID',
     yhkzf: 'Bank card payment',
-    gyhfsxx: 'Send system messages to user {0}'
+    gyhfsxx: 'Send system messages to user',
+
+    bty: 'disagree',
+    gyhywc: 'The user has completed the transaction：',
+    hpl: 'rate：',
+    ddxx: 'The order information',
+    ggxx: 'Advertising information',
+    gm: 'buy',
+    cs: 'sell',
+    dj: 'unit price',
+    xdsj: 'Place the order of time'
 }
 export const rank = {
     jb: 'Level',
@@ -1253,4 +1263,17 @@ export const rank = {
     jbmc: 'Level name',
     zxjyl: 'Minimum transaction volume',
     zk: 'discount'
+}
+export const benchmark = {
+    otcjzjgl: 'OTC benchmark price management',
+    fbhllq: 'Fiat currency exchange rate pull',
+    jysjzj: 'Exchange reference price',
+    jzjys: 'Benchmark exchange',
+    bdfb: 'The underlying legal tender',
+    jzfb: 'Benchmark fiat',
+    hl: 'The exchange rate',
+    zxgxsj: 'Latest update time',
+    ddsj: 'Waiting time',
+    jysid: 'Exchange ID',
+    jzjysmc: 'Benchmark exchange name',
 }

@@ -10,7 +10,7 @@
                 <input type="radio" v-model="checkfromUserId" name="radio" value="1">{{vm.$t('otc.hs')}}
                 <span style="margin-left:20px;">{{vm.$t('risk.cl')}}</span>
                 <Select v-model="punishTypeId1" style="width:200px">
-                    <Option value="0">{{vm.$t('common.w')}}<Option>
+                    <Option value="0">{{vm.$t('common.w')}}</Option>
                     <Option value="1">{{vm.$t('otc.fsjg')}}</Option>
                     <Option value="2">{{vm.$t('otc.jfesh')}}</Option>
                     <Option value="3">{{vm.$t('otc.jfqsh')}}</Option>
@@ -33,7 +33,8 @@
             </div>
         </Row>
         <Row type="flex" justify="center" style="height:50px;">
-            <Button type="primary" style="width:200px;margin:8px 0;" @click="getupdateHandle()">{{vm.$t('otc.qd')}}</Button>
+            <Button type="primary" style="width:200px;margin:8px 0;" @click="getupdateHandle()">{{vm.$t('common.qd')}}
+            </Button>
         </Row>
     </Card>
 </template>
@@ -119,7 +120,6 @@
                         this.$Message.error({content: msg});
                     });
                 }
-
             }
         }
     };

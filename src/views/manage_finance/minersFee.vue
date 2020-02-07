@@ -36,6 +36,7 @@
     import list from './minersFee/list';
     import currenyApi from '../../api/currency';
     import util from '../../libs/util';
+    import otcApi from '../../api/otc';
 
     export default {
         name: 'minersFee',
@@ -49,20 +50,20 @@
                 page: 1,
                 size: 10,
                 total: 0,
-                data: [{}],
+                data: [],
                 columns: [
-                    {title: this.$t('system.yhid'), key: 'username'},
+                    {title: this.$t('system.yhid'), key: 'userId'},
                     {title: this.$t('common.yhm'), key: 'username'},
                     {title: this.$t('common.bz'), key: 'symbol'},
-                    {title: this.$t('finance.dzsl'), key: 'symbol'},
-                    {title: this.$t('finance.cbdz'), key: 'symbol'},
-                    {title: this.$t('common.gxsj'), key: 'symbol'},
+                    {title: this.$t('finance.dzsl'), key: 'availableBalance'},
+                    {title: this.$t('finance.cbdz'), key: 'address'},
+                    {title: this.$t('common.gxsj'), key: 'updatedAt'},
                     {
                         title: this.$t('common.cz'), render: (h, params) => {
                             return h('Button', {
                                 props: {
                                     type: 'primary',
-                                    // disabled: params.row.symbol !== 'ETH'
+                                    disabled: params.row.symbol !== 'ETH'
                                 },
                                 on: {
                                     click: () => {
@@ -78,7 +79,8 @@
                         }
                     },
                 ],
-                symbolList: []
+                symbolList: [],
+                outData: {}
             };
         },
         created () {
@@ -87,6 +89,19 @@
         },
         methods: {
             getList () {
+                let data = {
+                    size: this.size,
+                    page: this.page,
+                    symbol: this.form.symbol === '0' ? null : this.form.symbol,
+                    username: this.form.username,
+                    address: this.form.address
+                };
+                this.outData = data;
+                otcApi.selectMinerDistributeList(data, (res, total) => {
+                    this.data = res;
+                    this.total = total;
+                }, msg => {
+                });
             },
             changePage (e) {
                 this.page = e;
@@ -101,6 +116,7 @@
                 util.setDialog(list);
             },
             outExl () {
+                util.outExl('api/bm/minerFee/distribute/exportMinerDistributeExcel', this.outData);
             },
         }
     };

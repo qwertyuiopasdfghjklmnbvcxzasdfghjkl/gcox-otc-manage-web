@@ -12,8 +12,8 @@
             <!--</FormItem>-->
             <!--<FormItem>-->
         <p class="btn_p">
-            <Button type="primary" @click="audit('2')">同意</Button>
-            <Button type="ghost" style="margin-left: 8px" @click="audit('1')">不同意</Button>
+            <Button type="primary" @click="audit('2')">{{vm.$t('otc.ty')}}</Button>
+            <Button type="ghost" style="margin-left: 8px" @click="audit('1')">{{vm.$t('otc.bty')}}</Button>
         </p>
 
             <!--</FormItem>-->
@@ -27,7 +27,9 @@
     export default {
         props: ['id', 'withdrawApplyId'],
         data () {
+            const vm = window.vm
             return {
+                vm: vm,
                 // formItem: {
                 //     checkbox: false, //1，已电话确认 0，未电话确认
                 //     textarea: '',

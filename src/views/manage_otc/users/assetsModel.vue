@@ -6,7 +6,7 @@
         </p>
         <div style="font-size:16px;">
             <Row>
-                {{vm.$t('otc.xxdzcxx').format(this.username)}}
+                {{username}} {{vm.$t('otc.xxdzcxx')}}
             </Row>
             <Row>
                 {{vm.$t('otc.dqzgz')}}：{{this.btcPrice}}BTC/{{this.currencyPrice}}CNY
