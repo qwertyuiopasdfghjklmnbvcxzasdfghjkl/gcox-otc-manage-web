@@ -14,7 +14,7 @@
                     <DatePicker type="datetime" v-model="end" :placeholder="$t('common.jssj')"
                                 format="yyyy-MM-dd HH:mm:ss"
                                 style="width: 160px"></DatePicker>
-                    <Button type="primary" @click="curPage=1;getList()">{{$t('common.cx')}}</Button>
+                    <Button type="primary" @click="page=1;getList()">{{$t('common.cx')}}</Button>
                 </Col>
                 <Col span="8" style="text-align: right">
                     <Button type="primary" @click="outExl()">{{$t('systemlog.dc')}}</Button>
@@ -75,8 +75,8 @@
                     page: this.page,
                     statisticItem: this.statisticItem,
                 };
-                data.start = this.start ? util.dateToStr(new Date(this.start)) : null;
-                data.end = this.end ? util.dateToStr(new Date(this.end)) : null;
+                data.start = this.start ? util.dateToStr(new Date(this.start)).toString() : null;
+                data.end = this.end ? util.dateToStr(new Date(this.end)).toString() : null;
                 this.outData = data
                 reportApi.selectDailyExportData(data, (res,total) => {
                     this.data = res;
