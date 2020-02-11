@@ -34,7 +34,7 @@
 			</Card>
 			<Table border :columns="voteRecordList.columns" :data="voteRecordList.data" style="margin-top:20px;"></Table>
         	<Page :current="voteRecordList.page" :total="voteRecordList.total" :page-size="voteRecordList.size" @on-change="votechangePage" style="text-align:center;margin-top:20px;"></Page>
-	        
+
 			<div slot="footer">
 				<Button @click="showModal=false">取消</Button>
 			</div>
@@ -64,12 +64,12 @@
 			</Card>
 			<Table border :columns="poolRecordList.columns" :data="poolRecordList.data" style="margin-top:20px;"></Table>
         	<Page :current="poolRecordList.page" :total="poolRecordList.total" :page-size="poolRecordList.size" @on-change="poolchangePage" style="text-align:center;margin-top:20px;"></Page>
-	        
+
 			<div slot="footer">
 				<Button @click="poolModal=false">取消</Button>
 			</div>
 	    </Modal>
-		
+
 	</Card>
 </template>
 
@@ -101,7 +101,7 @@ export default {
 				{title: '投票账户冻结金额', key: 'frozenBalance'},
 				{title: '邀请人手机号', key: 'invitePhone'},
 				{
-					title: '操作', 
+					title: '操作',
 					key: 'dailyVoteAmount',
 					width: 210,
 					align: 'center',
@@ -185,14 +185,12 @@ export default {
   		this.getVoteMinerList()
   	},
   	getVoteMinerList(){
-		let serchData={}
+		let serchData={
+			page:this.users.page,
+			size:this.users.size,
+		}
 		serchData[this.formData.type] = this.formData.text
-  		voteApi.voteMinerQuery(
-			{
-				page:this.users.page, 
-				size:this.users.size, 
-				...serchData 
-			},
+  		voteApi.voteMinerQuery(serchData,
 			res=>{
   			this.users.total = res.total
   			this.users.data = res.data
