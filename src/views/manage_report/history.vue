@@ -80,7 +80,7 @@
                 this.outData = data
                 reportApi.selectDailyExportData(data, (res,total) => {
                     this.data = res;
-                    this.total = total
+                    this.total = total;
                 });
             },
             changePage (e) {
