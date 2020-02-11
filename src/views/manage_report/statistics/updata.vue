@@ -96,8 +96,8 @@
                 statisticItem: null,
                 itemDesc: null,
                 param1: null,
-                excludeSpecialUsers: 0,
-                status: 0,
+                excludeSpecialUsers: null,
+                status: null,
                 orderNo: null,
                 datas: {
                     statisticItem: null,
