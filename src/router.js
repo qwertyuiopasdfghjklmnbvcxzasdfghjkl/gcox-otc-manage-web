@@ -1519,7 +1519,24 @@ export const reportRouter = [
                 }
             }
         ]
-    }
+    },
+    {
+       path: '/fee_details',
+       name: 'fee_details',
+       title: 'report.sxfxqb',
+       component: Main,
+       icon: 'archive',
+       meta: {
+           roles: ['ROLE_ADMIN', 'ROLE_CUSTOMER', 'ROLE_OPERATION'],
+       },
+       children: [
+           {
+               path: 'fee_details_index', title: 'report.sxfxqb', name: 'fee_details_index', component: resolve => {
+                   require(['./views/manage_report/fee_details.vue'], resolve);
+               }
+           }
+       ]
+   }
 ];
 
 export const adminRouter = [

@@ -1075,7 +1075,20 @@ export const report = {
     tjbbgl: 'Statistical management',
     wjm: 'file name',
     xz: 'download',
-    mrbb: 'Daily report'
+    mrbb: 'Daily report',
+    tjzb: '统计指标',
+    tjz: '统计值',
+    sfpc: '是否排除',
+    pc: '排除',
+    bpc: '不排除',
+    zbms: '指标描述',
+    csy: '参数1',
+    sfpctszh: '是否排除特殊用户',
+    sxfxqb: '手续费详情表',
+    sxffx:'手续费方向',
+    sxfsl:'手续费数量',
+    sxfbz:'手续费币种',
+    px: '排序'
 }
 export const lock = {
     zscyh: 'Total number of locked users',

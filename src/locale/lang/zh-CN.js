@@ -1090,6 +1090,10 @@ export const report = {
     zbms: '指标描述',
     csy: '参数1',
     sfpctszh: '是否排除特殊用户',
+    sxfxqb: '手续费详情表',
+    sxffx:'手续费方向',
+    sxfsl:'手续费数量',
+    sxfbz:'手续费币种',
     px: '排序'
 };
 export const mall = {
