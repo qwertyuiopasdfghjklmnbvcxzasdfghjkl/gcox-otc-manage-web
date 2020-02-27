@@ -1234,6 +1234,13 @@ export const invite = {
     xgtjr: '修改推荐人',
     xgq: '修改前',
     xgh: '修改后',
+    yqfycx: '邀请返佣查询',
+    yqfyjl: '邀请返佣记录',
+    yhdfyhj: '已获得返佣合计',
+    fyje: '返佣金额',
+    fybl: '返佣比例',
+    zhusdt: '折合USDT',
+    yqr: '邀请人',
 };
 export const otc = {
     skfs: '收款方式',
