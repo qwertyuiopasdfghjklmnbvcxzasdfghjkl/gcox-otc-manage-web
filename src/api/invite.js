@@ -72,4 +72,27 @@ export default {
                 }
             }, error);
     },
+    
+    //邀请返佣记录  api/bm/feeDetails/{pageSize}/{page}
+    inviteCommissionRecord (pageSize, page, data, success, error) {
+        api.post(`api/bm/feeDetails/selectRakeBack/${pageSize}/${page}`, data, (res) => {
+            if (res.rst === 1) {
+                success && success(res);
+            } else {
+                error && error(res.msg||res.error);
+            }
+        }, error);
+    },
+
+    //邀请返佣查询 POST /api/bm/feeDetails/selectStatistic/{pageSize}/{page}
+    inviteCommissionCount (pageSize, page, data, success, error) {
+        api.post(`api/bm/feeDetails/selectStatistic/${pageSize}/${page}`, data, (res) => {
+            if (res.rst === 1) {
+                success && success(res);
+            } else {
+                error && error(res.msg||res.error);
+            }
+        }, error);
+    },
+
 }

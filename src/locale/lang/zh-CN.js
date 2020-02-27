@@ -1090,6 +1090,10 @@ export const report = {
     zbms: '指标描述',
     csy: '参数1',
     sfpctszh: '是否排除特殊用户',
+    sxfxqb: '手续费详情表',
+    sxffx:'手续费方向',
+    sxfsl:'手续费数量',
+    sxfbz:'手续费币种',
     px: '排序'
 };
 export const mall = {
@@ -1230,6 +1234,13 @@ export const invite = {
     xgtjr: '修改推荐人',
     xgq: '修改前',
     xgh: '修改后',
+    yqfycx: '邀请返佣查询',
+    yqfyjl: '邀请返佣记录',
+    yhdfyhj: '已获得返佣合计',
+    fyje: '返佣金额',
+    fybl: '返佣比例',
+    zhusdt: '折合USDT',
+    yqr: '邀请人',
 };
 export const otc = {
     skfs: '收款方式',

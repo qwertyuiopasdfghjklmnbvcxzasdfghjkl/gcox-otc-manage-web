@@ -22,7 +22,7 @@
                     <Input v-model="itemDesc"
                            type="textarea"
                            :rows="4"
-                           maxlength="255"
+                           :maxlength="255"
                            style="width: 200px"/>
                 </Col>
                 <Col span="3">
@@ -96,8 +96,8 @@
                 statisticItem: null,
                 itemDesc: null,
                 param1: null,
-                excludeSpecialUsers: 0,
-                status: 0,
+                excludeSpecialUsers: null,
+                status: null,
                 orderNo: null,
                 datas: {
                     statisticItem: null,
@@ -118,9 +118,14 @@
                 this.$emit('okCallback');
             },
             tabs (propName) {
+                console.log(this[propName])
                 if (!this[propName]) {
-                    this.$Message.error({content: this.vm.$t('common.bnwk')});
-                    return;
+                    if(this[propName] == 0){
+
+                    }else{
+                        this.$Message.error({content: this.vm.$t('common.bnwk')});
+                        return;
+                    }
                 }
                 let data = {
                     id: this.item.id

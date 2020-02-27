@@ -743,6 +743,40 @@ export const inviteRouter = [
                 }
             },
         ]
+    },
+    {
+        path: '/rake-back',
+        name: 'rake-back',
+        title: 'invite.yqfycx',
+        component: Main,
+        icon: 'card',
+        meta: {
+            roles: ['ROLE_ADMIN','ROLE_OPERATION','ROLE_CUSTOMER'],
+        },
+        children: [
+            {
+                path: 'rake-back-list', title: 'invite.yqfycx', name: 'rake-back-list', component: resolve => {
+                    require(['./views/manage_invite/rake-back.vue'], resolve);
+                }
+            },
+        ]
+    },
+    {
+        path: '/rake-record',
+        name: 'rake-record',
+        title: 'invite.yqfyjl',
+        component: Main,
+        icon: 'clipboard',
+        meta: {
+            roles: ['ROLE_ADMIN','ROLE_OPERATION','ROLE_CUSTOMER'],
+        },
+        children: [
+            {
+                path: 'rake-record-list', title: 'invite.yqfyjl', name: 'rake-record-list', component: resolve => {
+                    require(['./views/manage_invite/rake-record.vue'], resolve);
+                }
+            },
+        ]
     }
 ];
 export const lockRouter = [
@@ -1519,7 +1553,24 @@ export const reportRouter = [
                 }
             }
         ]
-    }
+    },
+    {
+       path: '/fee_details',
+       name: 'fee_details',
+       title: 'report.sxfxqb',
+       component: Main,
+       icon: 'archive',
+       meta: {
+           roles: ['ROLE_ADMIN', 'ROLE_CUSTOMER', 'ROLE_OPERATION'],
+       },
+       children: [
+           {
+               path: 'fee_details_index', title: 'report.sxfxqb', name: 'fee_details_index', component: resolve => {
+                   require(['./views/manage_report/fee_details.vue'], resolve);
+               }
+           }
+       ]
+   }
 ];
 
 export const adminRouter = [
