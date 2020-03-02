@@ -66,7 +66,7 @@
         },
         created() {
             this.getdataSymbol();
-            // this.getList()
+            this.getList()
         },
         methods: {
             getdataSymbol () {
@@ -79,7 +79,7 @@
                 // formData.createdAtStart = formData.createdAtStart ? util.dateToStr(new Date(formData.createdAtStart)) : null;
                 // formData.createdAtEnd = formData.createdAtEnd ? util.dateToStr(new Date(formData.createdAtEnd)) : null;
                 this.downloadparmes = formData
-                if(formData.userName){
+                // if(formData.userName){
                     inviteApi.inviteCommissionCount(this.size,this.page,formData, res => {
                         // this.$Message.success({content: res.msg});
                         this.tabData = res.data
@@ -87,9 +87,9 @@
                     }, msg => {
                         this.$Message.error({content: msg});
                     });    
-                }else{
-                    this.$Message.error({content: this.$t('common.yhm')+this.$t('common.bnwk')});
-                }
+                // }else{
+                //     this.$Message.error({content: this.$t('common.yhm')+this.$t('common.bnwk')});
+                // }
             },
             downloadList() {
                 let arr = []
@@ -99,11 +99,12 @@
                         arr.push(i+'='+v)
                     }
                 }
-                if(this.downloadparmes.userName){
                     window.location.href = `${util.baseURL}api/bm/feeDetails/exportStatisticExcel?export=1&${arr.join('&')}`
-                }else{
-                    this.$Message.error({content: this.$t('common.yhm')+this.$t('common.bnwk')});
-                }
+                // if(this.downloadparmes.userName){
+                //     window.location.href = `${util.baseURL}api/bm/feeDetails/exportStatisticExcel?export=1&${arr.join('&')}`
+                // }else{
+                //     this.$Message.error({content: this.$t('common.yhm')+this.$t('common.bnwk')});
+                // }
             },
             changePage(page){
                 this.page = page
