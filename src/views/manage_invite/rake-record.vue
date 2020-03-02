@@ -17,12 +17,12 @@
                     <DatePicker type="datetime" v-model="data.end" :placeholder="$t('common.jssj')"
                                 format="yyyy-MM-dd HH:mm:ss"
                                 style="width: 160px"></DatePicker>
-                    {{$t('common.zt')}}
+                    <!-- {{$t('common.zt')}}
                     <Select v-model="data.status" style="width: 100px">
                         <Option value="">{{$t('common.qb')}}</Option>
                         <Option :value="2">{{$t('lock.ywc')}}</Option>
                         <Option :value="1">{{$t('lock.wwc')}}</Option>
-                    </Select>
+                    </Select> -->
                     <Button type="primary" @click="page=1;getList()">{{$t('common.cx')}}</Button>
                 </Col>
                 <Col :lg='2' :md='4' :xs='4'>
@@ -51,7 +51,7 @@
                     symbol: null,
                     start: null,
                     end: null,
-                    status: null
+                    // status: null
                 },
                 outData:{
                     username: null

@@ -755,7 +755,7 @@ export const inviteRouter = [
         },
         children: [
             {
-                path: 'rake-back-list', title: 'invite.yqfycx', name: 'rake-back-list', component: resolve => {
+                path: 'rake-back-list', title: 'invite.yqfycx', name: 'rake-back-list_index', component: resolve => {
                     require(['./views/manage_invite/rake-back.vue'], resolve);
                 }
             },
@@ -772,7 +772,7 @@ export const inviteRouter = [
         },
         children: [
             {
-                path: 'rake-record-list', title: 'invite.yqfyjl', name: 'rake-record-list', component: resolve => {
+                path: 'rake-record-list', title: 'invite.yqfyjl', name: 'rake-record-list_index', component: resolve => {
                     require(['./views/manage_invite/rake-record.vue'], resolve);
                 }
             },
