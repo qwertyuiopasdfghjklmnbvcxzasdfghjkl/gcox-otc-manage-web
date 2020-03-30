@@ -7,7 +7,7 @@
         <div class="cont">
             <p>
                 <span>{{vm.$t('common.yhm')}}</span>
-                <span>{{data.cardName}}</span>
+                <span>{{data.username}}</span>
             </p>
             <p>
                 <span>{{vm.$t('finance.lx')}}</span>

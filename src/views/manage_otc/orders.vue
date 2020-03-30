@@ -6,6 +6,7 @@
         </p>
         <Row>
             <Select v-model="formData.symbol" style="width:200px">
+                <Option value="0">{{$t('common.qb')}}</Option>
                 <Option v-for="(item,i) in symbolTypeList" :value="item.symbol" :key="i">{{item.symbol}}</Option>
             </Select>
             <Input v-model="formData.orderNumber" clearable style="width: 300px;"
@@ -32,7 +33,7 @@
                 curPage: 1,
                 total: 0,
                 formData: {
-                    symbol: 'BTC',
+                    symbol: '0',
                     orderNumber: ''
                 },
                 columns1: [
@@ -191,10 +192,14 @@
                 }
             },
             getOrdersList () {
-                otcApi.listAllOrders(this.curPage, {
+                let data = {
                     symbol: this.formData.symbol,
                     orderNumber: this.formData.orderNumber
-                }, (res, total) => {
+                }
+                if(data.symbol == '0'){
+                    data.symbol = null
+                }
+                otcApi.listAllOrders(this.curPage, data, (res, total) => {
                     res.forEach((item, index) => {
                         item.createTime = item.createdAt;
                         let date = util.formatDate(item.createTime).getTime();

@@ -30,8 +30,9 @@ const setDialog = function (component, opts) {
 };
 util.setDialog = setDialog;
 
- const ajaxUrl = env === 'production' ? `${location.protocol}//${location.host}/` : 'http://manage.gcoxotc-test.lab.ssss.so/';
-//  const ajaxUrl = env === 'production' ? `${location.protocol}//${location.host}/` : 'http://manage.gcoxotc-dev.lab.ssss.so/';
+//  const ajaxUrl = env === 'production' ? `${location.protocol}//${location.host}/` : 'http://manage.gcoxotc-test.lab.ssss.so/';
+ const ajaxUrl = env === 'production' ? `${location.protocol}//${location.host}/` : 'http://manage.gcoxotc-dev.lab.ssss.so/';
+//  const ajaxUrl = env === 'production' ? `${location.protocol}//${location.host}/` : 'http://manage.etv-dev.lab.ssss.so/';
 //
 util.baseURL = ajaxUrl;
 

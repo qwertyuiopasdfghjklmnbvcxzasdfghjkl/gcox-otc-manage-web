@@ -6,6 +6,7 @@
         </p>
         <Row>
             <Select v-model="symbol" style="width:200px" @on-change="curPage=1;getAdsList()">
+                <Option value="0">{{$t('common.qb')}}</Option>
                 <Option v-for="(item,i) in symbolTypeList" :value="item.symbol" :key="i">{{item.symbol}}</Option>
                 <!-- <Option value="BTC">BTC</Option>
                 <Option value="ETH">ETH</Option>
@@ -133,7 +134,7 @@
                     }
                 ],
                 data1: [],
-                symbol: '',
+                symbol: '0',
                 ad_type: 2,
                 symbolTypeList: null
             };
@@ -183,6 +184,9 @@
                     symbol: this.symbol,
                     adType: this.ad_type
                 };
+                if(data.symbol == '0'){
+                    data.symbol = null
+                }
                 if (Number(this.ad_type) === 1 && this.AdsBuySortKey) {
                     data.sortKey = `${this.AdsBuySortKey} ${this.AdsBuySortVal}`;
                 }

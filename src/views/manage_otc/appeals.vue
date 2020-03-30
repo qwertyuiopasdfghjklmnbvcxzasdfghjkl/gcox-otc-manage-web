@@ -17,7 +17,7 @@
             <Row>
                 <Col span="6">
                     {{$t('nav.ssgl')}}：
-                    <Checkbox v-model="single" @on-change="curPage=1;unprocessed()">$t('otc.zxsdcl')</Checkbox>
+                    <Checkbox v-model="single" @on-change="curPage=1;unprocessed()">{{$t('otc.zxsdcl')}}</Checkbox>
                 </Col>
                 <Col span="6">{{$t('otc.ssbhpx')}}：
                     <RadioGroup v-model="orderNumber" @on-change="setOrderNumberSort">
